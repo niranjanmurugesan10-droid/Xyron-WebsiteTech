@@ -1,0 +1,531 @@
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar{
+
+    position:sticky;
+    top:0;
+    left:0;
+
+    width:100%;
+
+    z-index:999;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:18px 7%;
+
+    background:rgba(15,23,42,.82);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+
+    transition:.35s ease;
+
+}
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.nav-logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    cursor:pointer;
+
+}
+
+.nav-logo img{
+
+    width:58px;
+
+    height:58px;
+
+    object-fit:contain;
+
+    transition:.35s;
+
+}
+
+.nav-logo:hover img{
+
+    transform:rotate(-8deg) scale(1.05);
+
+}
+
+.nav-logo h2{
+
+    font-size:34px;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+}
+
+.nav-logo h2 span{
+
+    color:#2563EB;
+
+}
+
+/* =====================================================
+   MENU
+===================================================== */
+
+.nav-menu{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:42px;
+
+    list-style:none;
+
+}
+
+.nav-menu li{
+
+    position:relative;
+
+    color:#E2E8F0;
+
+    font-size:17px;
+
+    font-weight:500;
+
+    cursor:pointer;
+
+    transition:.35s ease;
+
+}
+
+.nav-menu li:hover{
+
+    color:#60A5FA;
+
+}
+
+/* Underline Animation */
+
+.nav-menu li::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+    90deg,
+    #2563EB,
+    #06B6D4);
+
+    transition:.35s ease;
+
+}
+
+.nav-menu li:hover::after{
+
+    width:100%;
+
+}
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.nav-btn{
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    padding:14px 28px;
+
+    border-radius:14px;
+
+    color:#ffffff;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    background:
+    linear-gradient(
+    135deg,
+    #2563EB,
+    #06B6D4);
+
+    transition:.35s ease;
+
+    box-shadow:
+    0 15px 35px rgba(37,99,235,.25);
+
+}
+
+.nav-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 22px 45px rgba(37,99,235,.35);
+
+}
+
+/* =====================================================
+   MENU TOGGLE
+===================================================== */
+
+.menu-toggle{
+
+    display:none;
+
+    color:#ffffff;
+
+    font-size:32px;
+
+    cursor:pointer;
+
+}
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+.mobile-menu{
+
+    display:none;
+
+}
+/* =====================================================
+   NAVBAR SCROLL EFFECT
+===================================================== */
+
+.navbar:hover{
+
+    background:rgba(15,23,42,.92);
+
+    box-shadow:0 10px 35px rgba(0,0,0,.18);
+
+}
+
+/* =====================================================
+   LOGO ANIMATION
+===================================================== */
+
+.nav-logo h2{
+
+    transition:.35s ease;
+
+}
+
+.nav-logo:hover h2{
+
+    letter-spacing:.8px;
+
+}
+
+/* =====================================================
+   BUTTON ANIMATION
+===================================================== */
+
+.nav-btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.nav-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:100%;
+
+    height:100%;
+
+    background:rgba(255,255,255,.18);
+
+    transform:skewX(-25deg);
+
+    transition:.6s;
+
+}
+
+.nav-btn:hover::before{
+
+    left:120%;
+
+}
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+.mobile-menu{
+
+    position:absolute;
+
+    top:100%;
+
+    left:0;
+
+    width:100%;
+
+    background:#0F172A;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    padding:25px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    transform:translateY(-30px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s ease;
+
+}
+
+.mobile-menu.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+
+}
+
+.mobile-menu button{
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    border-radius:12px;
+
+    background:#1E293B;
+
+    color:#E2E8F0;
+
+    font-size:16px;
+
+    transition:.35s ease;
+
+}
+
+.mobile-menu button:hover{
+
+    background:#2563EB;
+
+    color:#ffffff;
+
+}
+
+.mobile-btn{
+
+    margin-top:10px;
+
+    background:linear-gradient(
+    135deg,
+    #2563EB,
+    #06B6D4) !important;
+
+    color:#ffffff !important;
+
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media(max-width:992px){
+
+.nav-menu{
+
+    display:none;
+
+}
+
+.nav-btn{
+
+    display:none;
+
+}
+
+.menu-toggle{
+
+    display:block;
+
+}
+
+.navbar{
+
+    padding:18px 5%;
+
+}
+
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:768px){
+
+.nav-logo img{
+
+    width:48px;
+
+    height:48px;
+
+}
+
+.nav-logo h2{
+
+    font-size:28px;
+
+}
+
+.menu-toggle{
+
+    font-size:30px;
+
+}
+
+.mobile-menu{
+
+    padding:20px;
+
+}
+
+.mobile-menu button{
+
+    font-size:15px;
+
+}
+
+}
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media(max-width:480px){
+
+.navbar{
+
+    padding:16px 18px;
+
+}
+
+.nav-logo{
+
+    gap:10px;
+
+}
+
+.nav-logo img{
+
+    width:42px;
+
+    height:42px;
+
+}
+
+.nav-logo h2{
+
+    font-size:24px;
+
+}
+
+.menu-toggle{
+
+    font-size:28px;
+
+}
+
+.mobile-menu{
+
+    gap:14px;
+
+    padding:18px;
+
+}
+
+.mobile-menu button{
+
+    padding:14px;
+
+}
+
+}
+
+/* =====================================================
+   SMOOTH TRANSITIONS
+===================================================== */
+
+.navbar *,
+.navbar *::before,
+.navbar *::after{
+
+    transition:all .35s ease;
+
+}
+/* ===========================
+   ACTIVE MENU
+=========================== */
+
+.nav-menu li.active{
+
+    color:#60A5FA;
+
+}
+
+.nav-menu li.active::after{
+
+    width:100%;
+
+}

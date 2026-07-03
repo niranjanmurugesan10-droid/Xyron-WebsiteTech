@@ -1,0 +1,689 @@
+/* =========================================================
+   PRICING SECTION
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.Pricing{
+
+    width:100%;
+
+    padding:110px 20px;
+
+    background:
+    radial-gradient(circle at top left,rgba(37,99,235,.08),transparent 260px),
+    radial-gradient(circle at bottom right,rgba(6,182,212,.08),transparent 260px),
+    #ffffff;
+
+}
+
+.Pricing-header{
+
+    max-width:800px;
+
+    margin:0 auto 80px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+
+    gap:20px;
+
+}
+
+.Pricing-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:10px 24px;
+
+    border-radius:999px;
+
+    background:#EFF6FF;
+
+    color:#2563EB;
+
+    border:1px solid #BFDBFE;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.Pricing-header h1{
+
+    font-size:56px;
+
+    line-height:1.2;
+
+    color:#0F172A;
+
+    font-weight:700;
+
+}
+
+.Pricing-header h1 span{
+
+    background:linear-gradient(90deg,#2563EB,#06B6D4);
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+.Pricing-header p{
+
+    font-size:18px;
+
+    color:#64748B;
+
+    line-height:1.8;
+
+    max-width:650px;
+
+}
+
+.line{
+
+    width:90px;
+
+    height:4px;
+
+    border-radius:999px;
+
+    background:linear-gradient(90deg,#2563EB,#06B6D4);
+
+}
+
+/* =========================================================
+   PRICING CONTAINER
+========================================================= */
+
+.Pricing-container{
+
+    max-width:1250px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+    align-items:stretch;
+
+}
+/* =========================================================
+   PRICING CARD
+========================================================= */
+
+.Pricing-card{
+
+    position:relative;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    padding:40px 30px;
+
+    border-radius:28px;
+
+    background:#ffffff;
+
+    border:1px solid #E2E8F0;
+
+    box-shadow:0 15px 40px rgba(15,23,42,.06);
+
+    overflow:hidden;
+
+    transition:all .35s ease;
+
+}
+
+.Pricing-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:5px;
+
+    background:linear-gradient(90deg,#2563EB,#06B6D4);
+
+    transform:scaleX(0);
+
+    transform-origin:left;
+
+    transition:.4s;
+
+}
+
+.Pricing-card:hover::before{
+
+    transform:scaleX(1);
+
+}
+
+.Pricing-card:hover{
+
+    transform:translateY(-14px);
+
+    box-shadow:0 30px 70px rgba(37,99,235,.18);
+
+    border-color:#BFDBFE;
+
+}
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.Pricingicon{
+
+    width:90px;
+    height:90px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:42px;
+
+    color:#2563EB;
+
+    background:#EFF6FF;
+
+    border-radius:24px;
+
+    margin-bottom:28px;
+
+    transition:.35s;
+
+}
+
+.Pricing-card:hover .Pricingicon{
+
+    background:linear-gradient(135deg,#2563EB,#06B6D4);
+
+    color:#fff;
+
+    transform:rotate(10deg) scale(1.08);
+
+}
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.Pricing-card h3{
+
+    font-size:28px;
+
+    color:#0F172A;
+
+    margin-bottom:15px;
+
+}
+
+.Pricing-card h1{
+
+    font-size:48px;
+
+    font-weight:700;
+
+    margin-bottom:22px;
+
+    background:linear-gradient(90deg,#2563EB,#06B6D4);
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+.hr-line{
+
+    width:100%;
+
+    border:none;
+
+    border-top:1px solid #E2E8F0;
+
+    margin:10px 0 30px;
+
+}
+/* =========================================================
+   SERVICES LIST
+========================================================= */
+
+.pricing-sevices{
+
+    width:100%;
+
+    list-style:none;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    margin-bottom:35px;
+
+    padding:0;
+
+}
+
+.pricing-sevices li{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    color:#475569;
+
+    font-size:16px;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.pricing-sevices li:hover{
+
+    transform:translateX(6px);
+
+    color:#0F172A;
+
+}
+
+/* =========================================================
+   CHECK ICON
+========================================================= */
+
+.Check-icon{
+
+    width:28px;
+    height:28px;
+
+    min-width:28px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:#EFF6FF;
+
+    color:#2563EB;
+
+    padding:6px;
+
+    transition:.35s;
+
+}
+
+.Pricing-card:hover .Check-icon{
+
+    background:#2563EB;
+
+    color:#fff;
+
+    transform:rotate(360deg);
+
+}
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.Pricing-card button{
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    color:#fff;
+
+    background:linear-gradient(
+        135deg,
+        #2563EB,
+        #06B6D4
+    );
+
+    box-shadow:0 12px 25px rgba(37,99,235,.20);
+
+    transition:.35s ease;
+
+}
+
+.Pricing-card button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 18px 40px rgba(37,99,235,.30);
+
+}
+
+/* =========================================================
+   CARD THEMES
+========================================================= */
+
+.starter{
+
+    border-top:5px solid #2563EB;
+
+}
+
+.business{
+
+    transform:scale(1.05);
+
+    border:2px solid #2563EB;
+
+    background:linear-gradient(
+        180deg,
+        #ffffff,
+        #EFF6FF
+    );
+
+    box-shadow:0 30px 70px rgba(37,99,235,.18);
+
+}
+
+.business::after{
+
+    content:"MOST POPULAR";
+
+    position:absolute;
+
+    top:20px;
+    right:-42px;
+
+    width:170px;
+
+    text-align:center;
+
+    padding:8px;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    color:#fff;
+
+    background:linear-gradient(
+        90deg,
+        #2563EB,
+        #06B6D4
+    );
+
+    transform:rotate(45deg);
+
+}
+
+.business:hover{
+
+    transform:scale(1.08) translateY(-10px);
+
+}
+
+.premium{
+
+    border-top:5px solid #06B6D4;
+
+}
+/* =========================================================
+   MOBILE RESPONSIVE
+========================================================= */
+
+@media screen and (max-width:768px){
+
+.Pricing{
+
+    padding:70px 20px;
+
+}
+
+.Pricing-header{
+
+    margin-bottom:45px;
+
+    gap:15px;
+
+}
+
+.Pricing-badge{
+
+    font-size:13px;
+
+    padding:9px 20px;
+
+}
+
+.Pricing-header h1{
+
+    font-size:32px;
+
+    line-height:1.3;
+
+}
+
+.Pricing-header p{
+
+    font-size:15px;
+
+    line-height:1.7;
+
+}
+
+.Pricing-container{
+
+    grid-template-columns:1fr;
+
+    gap:25px;
+
+}
+
+.Pricing-card{
+
+    width:100%;
+
+    max-width:350px;
+
+    margin:auto;
+
+    padding:30px 22px;
+
+    border-radius:22px;
+
+}
+
+.Pricingicon{
+
+    width:70px;
+
+    height:70px;
+
+    font-size:32px;
+
+    margin-bottom:20px;
+
+}
+
+.Pricing-card h3{
+
+    font-size:24px;
+
+}
+
+.Pricing-card h1{
+
+    font-size:36px;
+
+    margin-bottom:18px;
+
+}
+
+.pricing-services{
+
+    gap:14px;
+
+    margin-bottom:25px;
+
+}
+
+.pricing-services li{
+
+    font-size:15px;
+
+}
+
+.Check-icon{
+
+    width:24px;
+
+    height:24px;
+
+    min-width:24px;
+
+}
+
+.Pricing-card button{
+
+    width:100%;
+
+    padding:14px;
+
+    font-size:15px;
+
+}
+
+.business{
+
+    transform:none;
+
+}
+
+.business:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.business::after{
+
+    display:none;
+
+}
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media screen and (max-width:480px){
+
+.Pricing{
+
+    padding:60px 15px;
+
+}
+
+.Pricing-header h1{
+
+    font-size:28px;
+
+}
+
+.Pricing-header p{
+
+    font-size:14px;
+
+}
+
+.Pricing-card{
+
+    max-width:100%;
+
+    padding:24px 18px;
+
+}
+
+.Pricing-card h3{
+
+    font-size:22px;
+
+}
+
+.Pricing-card h1{
+
+    font-size:32px;
+
+}
+
+.Pricingicon{
+
+    width:60px;
+
+    height:60px;
+
+    font-size:28px;
+
+}
+
+.pricing-services li{
+
+    font-size:14px;
+
+}
+
+.Pricing-card button{
+
+    padding:13px;
+
+    font-size:14px;
+
+}
+
+}

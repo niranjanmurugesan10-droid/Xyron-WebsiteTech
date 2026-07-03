@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scrollbar-width: 10px;
+  scrollbar-color:  linear-gradient(90deg, #2563eb, #06B6D4);;
+}
+body{
+  background:
+    radial-gradient(circle at top left,#dbeafe 0%,transparent 35%),
+    radial-gradient(circle at bottom right,#cffafe 0%,transparent 35%),
+    #fff;
+  font-size: 16PX;
+  font-family: 'outfit';
+}
+html {
+  scroll-behavior: smooth;
+}
