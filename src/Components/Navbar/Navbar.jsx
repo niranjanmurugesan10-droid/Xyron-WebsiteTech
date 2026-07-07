@@ -4,6 +4,8 @@ import logo from "../../assets/logo.webp";
 
 import {
   FiMenu,
+  FiMoon,
+  FiSun,
   FiX,
 } from "react-icons/fi";
 
@@ -34,7 +36,7 @@ const menuItems = [
   },
 ];
 
-const Navbar = () => {
+const Navbar = ({ theme, onToggleTheme }) => {
 
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -149,24 +151,32 @@ const Navbar = () => {
 
       </ul>
 
-      {/* Desktop Button */}
+      <div className="nav-actions">
+        <button
+          className={`theme-switch ${theme === 'dark' ? 'is-dark' : 'is-light'}`}
+          onClick={onToggleTheme}
+          aria-label="Toggle theme"
+          title={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
+        >
+          <span className="switch-track">
+            <span className="switch-thumb">
+              {theme === 'light' ? <FiSun /> : <FiMoon />}
+            </span>
+          </span>
+        </button>
 
-      <button
-
-        className="nav-btn"
-
-        onClick={() =>
-          window.open(
-            whatsappLink,
-            "_blank"
-          )
-        }
-
-      >
-
-        Get in Touch
-
-      </button>
+        <button
+          className="nav-btn"
+          onClick={() =>
+            window.open(
+              whatsappLink,
+              "_blank"
+            )
+          }
+        >
+          Get in Touch
+        </button>
+      </div>
 
       {/* Mobile Menu Icon */}
 
@@ -217,20 +227,24 @@ const Navbar = () => {
         ))}
 
         <button
+          className="theme-toggle mobile-theme-toggle"
+          onClick={onToggleTheme}
+          aria-label="Toggle theme"
+        >
+          {theme === "light" ? <FiMoon /> : <FiSun />}
+          <span>{theme === "light" ? "Dark Mode" : "Light Mode"}</span>
+        </button>
 
+        <button
           className="mobile-btn"
-
           onClick={() =>
             window.open(
               whatsappLink,
               "_blank"
             )
           }
-
         >
-
           Get in Touch
-
         </button>
 
       </div>

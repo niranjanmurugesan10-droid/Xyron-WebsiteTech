@@ -94,6 +94,19 @@ const Header = () => {
         </div>
 
       </div>
+      {/* Hero scroll button (bottom center) */}
+      <button
+        className="hero-scroll"
+        onClick={() =>
+          document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })
+        }
+        aria-label="Scroll to projects"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" shapeRendering="geometricPrecision">
+          <path d="M12 5v14" stroke="currentColor" strokeWidth="2.2" strokeLinecap="square" />
+          <path d="M6 13l6 6 6-6" stroke="currentColor" strokeWidth="2.2" strokeLinecap="square" strokeLinejoin="miter" />
+        </svg>
+      </button>
     </section>
   );
 };

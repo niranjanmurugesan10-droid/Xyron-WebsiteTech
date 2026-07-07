@@ -48,7 +48,7 @@ const contactInfo = [
   {
     icon: <FiMapPin />,
     title: "Location",
-    value: "Thanjavur, Tamil Nadu",
+    value: "Chennai, Tamil Nadu",
     href: "https://maps.google.com",
   },
 ];

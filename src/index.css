@@ -1,20 +1,368 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-*{
-margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-  scrollbar-width: 10px;
-  scrollbar-color:  linear-gradient(90deg, #2563eb, #06B6D4);;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+:root {
+  --primary: #2563EB;
+  --secondary: #0EA5E9;
+  --accent: #06B6D4;
+  --heading: #0F172A;
+  --text: #64748B;
+  --muted: #94A3B8;
+  --border: #E2E8F0;
+  --bg: #F8FAFC;
+  --surface: #FFFFFF;
+  --surface-alt: #F4F8FF;
+  --soft-bg: #EFF6FF;
+  --soft-border: #BFDBFE;
+  --soft-text: #1D4ED8;
+  --shadow: 0 10px 30px rgba(37, 99, 235, 0.06);
+  --shadow-hover: 0 25px 50px rgba(37, 99, 235, 0.15);
+  --card-bg: #FFFFFF;
+  --card-border: #E5E7EB;
+  --card-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+  --card-hover-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+  --theme-transition: 350ms;
+  --section-bg-start: rgba(255,255,255,0.92);
+  --section-bg-end: rgba(244,248,255,0.95);
+  /* inputs & icons */
+  --input-bg: #ffffff;
+  --input-border: #E2E8F0;
+  --input-text: #0F172A;
+  --input-placeholder: #94A3B8;
+  --focus-border: #2563EB;
+  --icon-bg: #EFF6FF;
+  --icon-color: var(--primary);
+  --btn-hover: linear-gradient(90deg,#1D4ED8,#0891B2);
+  --cta-start: #1D4ED8;
+  --cta-end: #0891B2;
+  --cta-shadow: 0 14px 30px rgba(29,78,216,0.10);
+  --arrow-offset: 12px;
+  --arrow-bulb-start: rgba(6,182,255,0.95);
+  --arrow-bulb-end: rgba(37,99,235,0.85);
+  --arrow-bulb-color: #ffffff;
+  --arrow-bulb-glow: 0 10px 30px rgba(6,182,255,0.18);
 }
-body{
-  background:
-    radial-gradient(circle at top left,#dbeafe 0%,transparent 35%),
-    radial-gradient(circle at bottom right,#cffafe 0%,transparent 35%),
-    #fff;
-  font-size: 16PX;
-  font-family: 'outfit';
-}
-html {
+
+html[data-theme="dark"] {
+  --primary: #3B82F6;
+  --secondary: #38BDF8;
+  --accent: #22D3EE;
+  --heading: #FFFFFF;
+  --text: #CBD5E1;
+  --muted: #94A3B8;
+  --border: #334155;
+  --bg: #0F172A;
+  --surface: #1E293B;
+  --surface-alt: #111827;
+  --soft-bg: #1E293B;
+  --soft-border: rgba(59,130,246,0.18);
+  --soft-text: #DDF4FF;
+  --shadow: 0 10px 30px rgba(0,0,0,0.35);
+  --shadow-hover: 0 24px 50px rgba(37,99,235,0.18);
+  --theme-transition: 350ms;
+  --section-bg-start: rgba(2, 6, 23, 0.96);
+  --section-bg-end: rgba(15, 23, 42, 0.94);
+  /* inputs & icons for dark */
+  --input-bg: #1E293B;
+  --input-border: #334155;
+  --input-text: #FFFFFF;
+  --input-placeholder: #94A3B8;
+  --focus-border: #38BDF8;
+  --primary: #2563EB;
+  --secondary: #38BDF8;
+  --accent: #22D3EE;
+  --heading: #F8FAFC;
+  --text: #C7D2E5;
+  --muted: #94A3B8;
+  --border: #16232f;
+  --bg: #040912;
+  --surface: #07101c;
+  --surface-alt: #050D19;
+  --soft-bg: rgba(8,14,28,0.72);
+  --soft-border: rgba(59,130,246,0.12);
+  --soft-text: #DDF4FF;
+  --card-bg: #061025;
+  --card-border: rgba(255,255,255,0.08);
+  --card-shadow: 0 24px 60px rgba(0,0,0,0.6);
+  --card-hover-shadow: 0 32px 80px rgba(0,0,0,0.65);
+  --shadow: 0 20px 50px rgba(2,6,23,0.6);
+  --shadow-hover: 0 30px 70px rgba(2,6,23,0.7);
+  --theme-transition: 350ms;
+  --section-bg-start: linear-gradient(180deg, rgba(4,8,20,0.9), rgba(10,16,28,0.9));
+  --section-bg-end: linear-gradient(180deg, rgba(8,14,26,0.95), rgba(10,16,28,0.98));
+  --nav-bg: rgba(6,12,24,0.6);
+  --nav-shadow: 0 8px 28px rgba(6,136,255,0.06), 0 2px 6px rgba(2,6,23,0.6) inset;
+  --cta-start: #06b6ff;
+  --cta-end: #0ea5e9;
+  --cta-shadow: 0 18px 48px rgba(6,182,255,0.12);
+  --glass-overlay: rgba(255,255,255,0.02);
+  --icon-bg: rgba(255,255,255,0.03);
+  --icon-color: var(--primary);
+  --arrow-offset: 30px;
+  --arrow-bulb-start: #FFD66B;
+  --arrow-bulb-end: #FF8A00;
+  --arrow-bulb-color: #10212a;
+  --arrow-bulb-glow: 0 14px 46px rgba(255,170,60,0.30);
   scroll-behavior: smooth;
+}
+
+/* Ambient lighting variables for dark mode */
+html[data-theme="dark"] {
+  --ambient-box-shadow: 0 0 20px rgba(59,130,246,.25), 0 0 40px rgba(34,211,238,.15), 0 0 80px rgba(34,211,238,.08);
+  --ambient-bg: radial-gradient(circle, rgba(59,130,246,.18) 0%, rgba(34,211,238,.10) 45%, transparent 75%);
+  --ambient-transition: all 0.35s ease;
+  --ambient-hover-mult: 1.2;
+}
+
+/* Apply subtle ambient glow to specific interactive elements in dark mode */
+html[data-theme="dark"] .nav-btn,
+html[data-theme="dark"] .header-btn1,
+html[data-theme="dark"] .header-btn2,
+html[data-theme="dark"] .header-card-button button,
+html[data-theme="dark"] .hero-scroll,
+html[data-theme="dark"] .floating-card,
+html[data-theme="dark"] .icon-box {
+  box-shadow: var(--ambient-box-shadow), var(--shadow);
+  transition: var(--ambient-transition);
+}
+
+/* Very subtle ambient layer for cards in dark mode */
+html[data-theme="dark"] .about-card,
+html[data-theme="dark"] .service-card,
+html[data-theme="dark"] .Pricing-card,
+html[data-theme="dark"] .contact-info-card,
+html[data-theme="dark"] .project-card {
+  box-shadow: var(--card-shadow), inset 0 0 12px rgba(59,130,246,0.05);
+}
+
+/* Hover increases ambient glow on interactive elements */
+html[data-theme="dark"] .nav-btn:hover,
+html[data-theme="dark"] .header-btn1:hover,
+html[data-theme="dark"] .header-btn2:hover,
+html[data-theme="dark"] .header-card-button button:hover,
+html[data-theme="dark"] .hero-scroll:hover,
+html[data-theme="dark"] .floating-card:hover,
+html[data-theme="dark"] .icon-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 24px rgba(59,130,246,.30), 0 0 48px rgba(34,211,238,.18), 0 0 96px rgba(34,211,238,.10), var(--shadow-hover);
+}
+
+/* Active navigation item gets ambient underline/glow */
+html[data-theme="dark"] .nav-menu li.active {
+  color: var(--primary);
+}
+html[data-theme="dark"] .nav-menu li.active::after {
+  background: var(--ambient-bg);
+  height: 4px;
+  border-radius: 999px;
+}
+
+/* Make icons use subtle radial background */
+html[data-theme="dark"] .icon-box {
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.02), transparent 40%);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color var(--theme-transition, 350ms) ease, color var(--theme-transition, 350ms) ease;
+}
+
+.preloader-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #38bdf8, #2563eb);
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.54);
+}
+
+.preloader-dot:nth-child(2) {
+  transform: translateX(-50%) rotate(120deg) translateY(-42px);
+}
+
+.preloader-dot:nth-child(3) {
+  transform: translateX(-50%) rotate(240deg) translateY(-42px);
+}
+
+.preloader-copy {
+  text-align: center;
+  color: var(--heading);
+}
+
+.preloader-copy strong {
+  display: block;
+  font-size: 18px;
+  letter-spacing: 0.02em;
+}
+
+@keyframes preloader-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.preloader-copy p {
+  margin: 8px auto 0;
+  max-width: 220px;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.preloader-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@keyframes preloader-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  #home,
+  #about,
+  #services,
+  .projects-section,
+  .Pricing,
+  .contact-section {
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #home,
+  #about,
+  #services,
+  .projects-section,
+  .Pricing,
+  .contact-section {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+}
+section[id] {
+  scroll-margin-top: 100px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.service-card,
+.Pricing-card,
+.about-card {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  will-change: opacity, transform;
+}
+
+.service-card.is-visible,
+.Pricing-card.is-visible,
+.about-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+::selection {
+  background: rgba(37, 99, 235, 0.16);
+  color: var(--heading);
+}
+
+@media (max-width: 768px) {
+  section[id],
+  .Pricing,
+  .projects-section,
+  .contact-section {
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  section[id],
+  .Pricing,
+  .projects-section,
+  .contact-section {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+}
+
+.dark-cursor-follower,
+.dark-cursor-dot {
+  position: fixed;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  transform: translate3d(-100px, -100px, 0);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  z-index: 9999;
+  will-change: transform, opacity, width, height;
+}
+
+.dark-cursor-follower {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  opacity: 0;
+  background: radial-gradient(circle at 40% 40%, rgba(255,255,220,0.32) 0%, rgba(251,191,36,0.28) 20%, rgba(249,115,22,0.12) 38%, rgba(245,158,11,0.06) 58%, transparent 82%);
+  filter: blur(9px);
+  mix-blend-mode: screen;
+  box-shadow: inset 0 0 34px rgba(250,204,21,0.18), 0 0 42px rgba(245,158,11,0.20), 0 0 92px rgba(234,179,8,0.12);
+}
+
+.dark-cursor-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0;
+  background: radial-gradient(circle, rgba(255,255,245,0.98) 0%, rgba(255,245,157,0.92) 45%, rgba(250,204,21,0.55) 100%);
+  box-shadow: 0 0 12px rgba(255,245,157,0.9), 0 0 26px rgba(251,191,36,0.34), 0 0 58px rgba(245,158,11,0.14);
+}
+
+.dark-cursor-hover {
+  width: 230px !important;
+  height: 230px !important;
+  filter: blur(10px) !important;
+  box-shadow: 0 0 110px rgba(59,130,246,0.30), 0 0 170px rgba(34,211,238,0.18) !important;
+}
+
+.dark-cursor-dot.cursor-hover {
+  width: 18px !important;
+  height: 18px !important;
+  box-shadow: 0 0 18px rgba(255,255,255,0.9), 0 0 34px rgba(56,189,248,0.42) !important;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .dark-cursor-follower,
+  .dark-cursor-dot {
+    display: none !important;
+  }
+
+  html[data-theme="dark"] {
+    cursor: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dark-cursor-follower,
+  .dark-cursor-dot {
+    transition: none !important;
+    filter: none !important;
+  }
 }

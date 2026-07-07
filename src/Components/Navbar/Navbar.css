@@ -2,530 +2,441 @@
    NAVBAR
 ===================================================== */
 
-.navbar{
-
-    position:sticky;
-    top:0;
-    left:0;
-
-    width:100%;
-
-    z-index:999;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    padding:18px 7%;
-
-    background:rgba(15,23,42,.82);
-
-    backdrop-filter:blur(18px);
-
-    border-bottom:1px solid rgba(255,255,255,.06);
-
-    transition:.35s ease;
-
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 7%;
+  background: var(--nav-bg, var(--surface));
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.02);
+  box-shadow: var(--nav-shadow, 0 8px 24px rgba(15, 23, 42, 0.04));
+  transition: background var(--theme-transition,350ms) ease, color var(--theme-transition,350ms) ease;
 }
 
-/* =====================================================
-   LOGO
-===================================================== */
-
-.nav-logo{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:14px;
-
-    cursor:pointer;
-
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
 }
 
-.nav-logo img{
-
-    width:58px;
-
-    height:58px;
-
-    object-fit:contain;
-
-    transition:.35s;
-
+.nav-logo img {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  transition: 0.35s ease;
 }
 
-.nav-logo:hover img{
-
-    transform:rotate(-8deg) scale(1.05);
-
+.nav-logo:hover img {
+  transform: rotate(-8deg) scale(1.05);
 }
 
-.nav-logo h2{
-
-    font-size:34px;
-
-    font-weight:700;
-
-    color:#ffffff;
-
+.nav-logo h2 {
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--heading);
+  transition: 0.35s ease;
 }
 
-.nav-logo h2 span{
-
-    color:#2563EB;
-
+.nav-logo h2 span {
+  color: var(--primary);
 }
 
-/* =====================================================
-   MENU
-===================================================== */
-
-.nav-menu{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:42px;
-
-    list-style:none;
-
+.nav-logo:hover h2 {
+  letter-spacing: 0.5px;
 }
 
-.nav-menu li{
-
-    position:relative;
-
-    color:#E2E8F0;
-
-    font-size:17px;
-
-    font-weight:500;
-
-    cursor:pointer;
-
-    transition:.35s ease;
-
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  list-style: none;
 }
 
-.nav-menu li:hover{
-
-    color:#60A5FA;
-
+.nav-menu li {
+  position: relative;
+  color: var(--heading);
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.35s ease;
 }
 
-/* Underline Animation */
-
-.nav-menu li::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-
-    bottom:-8px;
-
-    width:0;
-
-    height:2px;
-
-    border-radius:20px;
-
-    background:linear-gradient(
-    90deg,
-    #2563EB,
-    #06B6D4);
-
-    transition:.35s ease;
-
+.nav-menu li:hover,
+.nav-menu li.active {
+  color: var(--primary);
 }
 
-.nav-menu li:hover::after{
-
-    width:100%;
-
+.nav-menu li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 0;
+  height: 2px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transition: 0.35s ease;
 }
 
-/* =====================================================
-   BUTTON
-===================================================== */
-
-.nav-btn{
-
-    border:none;
-
-    outline:none;
-
-    cursor:pointer;
-
-    padding:14px 28px;
-
-    border-radius:14px;
-
-    color:#ffffff;
-
-    font-size:16px;
-
-    font-weight:600;
-
-    background:
-    linear-gradient(
-    135deg,
-    #2563EB,
-    #06B6D4);
-
-    transition:.35s ease;
-
-    box-shadow:
-    0 15px 35px rgba(37,99,235,.25);
-
+.nav-menu li:hover::after,
+.nav-menu li.active::after {
+  width: 100%;
 }
 
-.nav-btn:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:
-    0 22px 45px rgba(37,99,235,.35);
-
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-/* =====================================================
-   MENU TOGGLE
-===================================================== */
-
-.menu-toggle{
-
-    display:none;
-
-    color:#ffffff;
-
-    font-size:32px;
-
-    cursor:pointer;
-
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), var(--glass-overlay, rgba(255,255,255,0.03)));
+  color: var(--heading);
+  cursor: pointer;
+  transition: all 0.35s ease;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
 }
 
-/* =====================================================
-   MOBILE MENU
-===================================================== */
-
-.mobile-menu{
-
-    display:none;
-
-}
-/* =====================================================
-   NAVBAR SCROLL EFFECT
-===================================================== */
-
-.navbar:hover{
-
-    background:rgba(15,23,42,.92);
-
-    box-shadow:0 10px 35px rgba(0,0,0,.18);
-
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary);
+  color: var(--primary);
 }
 
-/* =====================================================
-   LOGO ANIMATION
-===================================================== */
-
-.nav-logo h2{
-
-    transition:.35s ease;
-
+.theme-toggle svg {
+  font-size: 18px;
 }
 
-.nav-logo:hover h2{
-
-    letter-spacing:.8px;
-
+.nav-btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 28px;
+  border-radius: 14px;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  background: linear-gradient(90deg, var(--cta-start), var(--cta-end));
+  box-shadow: var(--cta-shadow, 0 14px 30px rgba(37, 99, 235, 0.18));
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-/* =====================================================
-   BUTTON ANIMATION
-===================================================== */
-
-.nav-btn{
-
-    position:relative;
-
-    overflow:hidden;
-
+.nav-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 22px 44px rgba(6,182,255,0.14);
 }
 
-.nav-btn::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-
-    left:-120%;
-
-    width:100%;
-
-    height:100%;
-
-    background:rgba(255,255,255,.18);
-
-    transform:skewX(-25deg);
-
-    transition:.6s;
-
+.nav-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.16);
+  transform: skewX(-25deg);
+  transition: 0.6s ease;
 }
 
-.nav-btn:hover::before{
-
-    left:120%;
-
+.nav-btn:hover::before {
+  left: 120%;
 }
 
-/* =====================================================
-   MOBILE MENU
-===================================================== */
-
-.mobile-menu{
-
-    position:absolute;
-
-    top:100%;
-
-    left:0;
-
-    width:100%;
-
-    background:#0F172A;
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:18px;
-
-    padding:25px;
-
-    border-top:1px solid rgba(255,255,255,.08);
-
-    transform:translateY(-30px);
-
-    opacity:0;
-
-    visibility:hidden;
-
-    transition:.35s ease;
-
+.menu-toggle {
+  display: none;
+  color: var(--heading);
+  font-size: 32px;
+  cursor: pointer;
 }
 
-.mobile-menu.active{
-
-    opacity:1;
-
-    visibility:visible;
-
-    transform:translateY(0);
-
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px;
+  border-top: 1px solid var(--border);
+  transform: translateY(-20px);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.35s ease;
+  box-shadow: 0 18px 35px rgba(15, 23, 42, 0.08);
 }
 
-.mobile-menu button{
-
-    width:100%;
-
-    padding:16px;
-
-    border:none;
-
-    outline:none;
-
-    cursor:pointer;
-
-    border-radius:12px;
-
-    background:#1E293B;
-
-    color:#E2E8F0;
-
-    font-size:16px;
-
-    transition:.35s ease;
-
+.mobile-menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
-.mobile-menu button:hover{
-
-    background:#2563EB;
-
-    color:#ffffff;
-
+.mobile-menu button {
+  width: 100%;
+  padding: 14px 16px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background: #F8FAFC;
+  color: var(--heading);
+  font-size: 16px;
+  transition: 0.35s ease;
 }
 
-.mobile-btn{
-
-    margin-top:10px;
-
-    background:linear-gradient(
-    135deg,
-    #2563EB,
-    #06B6D4) !important;
-
-    color:#ffffff !important;
-
+.mobile-menu button:hover,
+.mobile-menu button.active {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  color: #fff;
 }
 
-/* =====================================================
-   TABLET
-===================================================== */
-
-@media(max-width:992px){
-
-.nav-menu{
-
-    display:none;
-
+.mobile-btn {
+  margin-top: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent)) !important;
+  color: #fff !important;
 }
 
-.nav-btn{
-
-    display:none;
-
+.mobile-theme-toggle {
+  width: 100%;
+  height: auto;
+  padding: 13px 16px;
+  border-radius: 12px;
+  justify-content: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 600;
 }
 
-.menu-toggle{
-
-    display:block;
-
+/* Premium rounded switch */
+.theme-switch {
+  --w: 56px;
+  --h: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  width: var(--w);
+  height: var(--h);
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(15,23,42,0.03), rgba(15,23,42,0.02));
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: background var(--theme-transition, 350ms) ease, border-color var(--theme-transition, 350ms) ease, transform 0.25s ease;
+}
+.theme-switch .switch-track {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+}
+.theme-switch .switch-thumb {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: inline-grid;
+  place-items: center;
+  color: var(--surface);
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  box-shadow: var(--shadow);
+  transition: transform var(--theme-transition, 350ms) ease, background var(--theme-transition, 350ms) ease;
+}
+.theme-switch.is-dark .switch-thumb {
+  transform: translateX(20px);
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+}
+.theme-switch.is-light .switch-thumb {
+  transform: translateX(0);
+  background: linear-gradient(90deg, #FDB813, #FFB347);
+  color: #0F172A;
 }
 
-.navbar{
-
-    padding:18px 5%;
-
+@media (max-width: 768px) {
+  .theme-switch { width: 48px; height: 28px; }
+  .theme-switch .switch-thumb { width: 22px; height: 22px; }
 }
 
+.nav-menu li.active {
+  color: #60A5FA;
 }
 
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media(max-width:768px){
-
-.nav-logo img{
-
-    width:48px;
-
-    height:48px;
-
+.nav-menu li.active::after {
+  width: 100%;
 }
-
-.nav-logo h2{
-
-    font-size:28px;
-
-}
-
-.menu-toggle{
-
-    font-size:30px;
-
-}
-
-.mobile-menu{
-
-    padding:20px;
-
-}
-
-.mobile-menu button{
-
-    font-size:15px;
-
-}
-
-}
-
-/* =====================================================
-   SMALL MOBILE
-===================================================== */
-
-@media(max-width:480px){
-
-.navbar{
-
-    padding:16px 18px;
-
-}
-
-.nav-logo{
-
-    gap:10px;
-
-}
-
-.nav-logo img{
-
-    width:42px;
-
-    height:42px;
-
-}
-
-.nav-logo h2{
-
-    font-size:24px;
-
-}
-
-.menu-toggle{
-
-    font-size:28px;
-
-}
-
-.mobile-menu{
-
-    gap:14px;
-
-    padding:18px;
-
-}
-
-.mobile-menu button{
-
-    padding:14px;
-
-}
-
-}
-
-/* =====================================================
-   SMOOTH TRANSITIONS
-===================================================== */
 
 .navbar *,
 .navbar *::before,
-.navbar *::after{
-
-    transition:all .35s ease;
-
-}
-/* ===========================
-   ACTIVE MENU
-=========================== */
-
-.nav-menu li.active{
-
-    color:#60A5FA;
-
+.navbar *::after {
+  transition: all 0.35s ease;
 }
 
-.nav-menu li.active::after{
+@media (max-width: 992px) {
+  .nav-menu {
+    display: none;
+  }
 
-    width:100%;
+  .nav-btn {
+    display: none;
+  }
 
+  /* keep the theme toggle visible on smaller screens */
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 16px 20px;
+  }
+
+  .nav-logo img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .nav-logo h2 {
+    font-size: 28px;
+  }
+
+  .menu-toggle {
+    font-size: 30px;
+  }
+
+  .mobile-menu {
+    padding: 20px;
+  }
+
+  .mobile-menu button {
+    font-size: 15px;
+  }
+
+  /* slightly smaller theme toggle on narrow screens */
+  .theme-toggle {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 16px 18px;
+  }
+
+  .nav-logo {
+    gap: 10px;
+  }
+
+  .nav-logo img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .nav-logo h2 {
+    font-size: 24px;
+  }
+
+  .menu-toggle {
+    font-size: 28px;
+  }
+
+  .mobile-menu {
+    gap: 14px;
+    padding: 18px;
+  }
+
+  .mobile-menu button {
+    padding: 14px;
+  }
+}
+
+/* Arrow indicator and torch-like animation for dark mode */
+.nav-btn::after {
+  content: "→";
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  pointer-events: none;
+  transition: transform var(--theme-transition,350ms) ease, text-shadow var(--theme-transition,350ms) ease;
+  text-shadow: 0 6px 18px rgba(6,182,255,0.10);
+}
+
+@keyframes torchMove {
+  0% { transform: translateY(-50%) translateX(0) rotate(0deg) scale(1); text-shadow: 0 6px 18px rgba(6,182,255,0.06); filter: brightness(1); }
+  50% { transform: translateY(-50%) translateX(var(--arrow-offset, 12px)) rotate(18deg) scale(1.05); text-shadow: 0 18px 46px rgba(6,182,255,0.28); filter: brightness(1.3); }
+  100% { transform: translateY(-50%) translateX(0) rotate(0deg) scale(1); text-shadow: 0 6px 18px rgba(6,182,255,0.06); filter: brightness(1); }
+}
+
+html[data-theme="dark"] .nav-btn::after {
+  /* static bulb arrow in navbar (no animation) */
+  animation: none !important;
+  color: var(--arrow-bulb-color);
+  text-shadow: var(--arrow-bulb-glow);
+  background: linear-gradient(90deg, var(--arrow-bulb-start), var(--arrow-bulb-end));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Make arrow brighter and rotate on hover for both themes */
+.nav-btn:hover::after {
+  transform: translateY(-50%) translateX(calc(var(--arrow-offset,12px) + 6px)) rotate(24deg) scale(1.08);
+  text-shadow: 0 26px 58px rgba(255,170,60,0.42);
+  filter: brightness(1.6);
+  transition: transform 200ms ease, text-shadow 200ms ease, filter 200ms ease;
+}
+
+@media (max-width: 768px) {
+  .nav-btn::after { right: 14px; font-size: 16px; }
+  .nav-btn:hover::after { transform: translateY(-50%) translateX(calc(var(--arrow-offset,10px))) rotate(18deg) scale(1.03); }
+}
+
+/* Dark theme visibility fixes */
+html[data-theme="dark"] .navbar {
+  background: var(--nav-bg, var(--surface));
+}
+
+html[data-theme="dark"] .navbar,
+html[data-theme="dark"] .navbar .nav-menu li,
+html[data-theme="dark"] .navbar .nav-logo h2,
+html[data-theme="dark"] .navbar .menu-toggle,
+html[data-theme="dark"] .navbar .nav-actions,
+html[data-theme="dark"] .navbar .nav-actions * {
+  color: var(--heading) !important;
+}
+
+/* Ensure mobile menu uses surface bg and readable text in dark */
+html[data-theme="dark"] .mobile-menu {
+  background: var(--surface);
+  color: var(--text);
+}
+
+html[data-theme="dark"] .mobile-menu button {
+  color: var(--heading);
+  background: transparent;
 }

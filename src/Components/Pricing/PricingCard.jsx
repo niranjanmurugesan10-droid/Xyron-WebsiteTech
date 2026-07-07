@@ -46,7 +46,7 @@ const PricingCard = ({
 
       <hr className="hr-line" />
 
-      <ul className="pricing-sevices">
+      <ul className="pricing-services">
 
         {services.map((service) => (
 

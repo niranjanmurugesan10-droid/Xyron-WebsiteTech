@@ -24,14 +24,14 @@ const contactInfo = [
   {
     icon: <FaWhatsapp />,
     title: "WhatsApp",
-    value: "+91 98765 43210",
-    link: "https://wa.me/919876543210",
+    value: "+91 9843336980",
+    link: "https://wa.me/9843336980",
   },
   {
     icon: <FiMail />,
     title: "Email",
-    value: "contact@xyrontech.com",
-    link: "mailto:contact@xyrontech.com",
+    value: "xyronwebtechnology@gmail.com",
+    link: "mailto:xyronwebtechnology@gmail.com",
   },
   {
     icon: <FiMapPin />,

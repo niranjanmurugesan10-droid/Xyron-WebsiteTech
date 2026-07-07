@@ -299,47 +299,25 @@
 }
 
 .footer-social a{
-
     width:54px;
-
     height:54px;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     border-radius:50%;
-
     text-decoration:none;
-
     color:#CBD5E1;
-
     background:rgba(255,255,255,.05);
-
     border:1px solid rgba(255,255,255,.08);
-
-    backdrop-filter:blur(12px);
-
+    backdrop-filter:blur(6px);
     font-size:22px;
-
-    transition:all .35s ease;
-
+    transition: background .25s ease, color .25s ease;
 }
 
 .footer-social a:hover{
-
     color:#ffffff;
-
     background:linear-gradient(135deg,#2563EB,#06B6D4);
-
     border-color:transparent;
-
-    transform:translateY(-8px) rotate(-10deg);
-
-    box-shadow:0 18px 40px rgba(37,99,235,.35);
-
 }
 
 /* ======================================================
@@ -347,61 +325,33 @@
 ====================================================== */
 
 .footer-column ul li{
-
-    transition:all .35s ease;
-
+    transition: color .20s ease;
 }
 
 .footer-column ul li:hover{
-
-    transform:translateX(10px);
-
+    /* subtle color change only */
+    color: #60A5FA;
 }
 
 .footer-column a:hover{
-
     color:#60A5FA;
-
 }
 
 .footer-column a svg{
-
     font-size:12px;
-
-    transition:.35s ease;
-
 }
-
-.footer-column li:hover svg{
-
-    transform:translateX(6px);
-
-    color:#60A5FA;
-
-}
-
-/* ======================================================
-   SERVICES HOVER
-====================================================== */
 
 .footer-column li svg{
-
     color:#2563EB;
-
-    transition:.35s ease;
-
+    transition: color .25s ease;
 }
 
 .footer-column li:hover{
-
     color:#60A5FA;
-
 }
 
 .footer-column li:hover svg{
-
-    transform:translateX(6px);
-
+    color:#60A5FA;
 }
 
 /* ======================================================
@@ -636,37 +586,19 @@
 ====================================================== */
 
 .footer-column ul li{
-
-    transition:all .35s ease;
-
-}
-
-.footer-column ul li:hover{
-
-    transform:translateX(10px);
-
+    transition: color .20s ease;
 }
 
 .footer-column a:hover{
-
     color:#60A5FA;
-
 }
 
 .footer-column a svg{
-
     font-size:12px;
-
-    transition:.35s ease;
-
 }
 
 .footer-column li:hover svg{
-
-    transform:translateX(6px);
-
     color:#60A5FA;
-
 }
 
 /* ======================================================
