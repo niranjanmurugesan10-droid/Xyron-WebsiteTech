@@ -24,14 +24,6 @@ const quickLinks = [
   { name: "Contact", href: "#contact" },
 ];
 
-const services = [
-  "Responsive Website",
-  "Business Website",
-  "Portfolio Website",
-  "Modern UI / UX",
-  "Website Maintenance",
-];
-
 const contactInfo = [
   {
     icon: <FiMail />,
@@ -56,24 +48,13 @@ const contactInfo = [
 const Footer = () => {
   return (
     <footer className="footer">
-
       <div className="footer-container">
-
-        {/* ================= BRAND ================= */}
-
         <div className="footer-brand">
-
           <div className="footer-logo">
-
-            <img
-              src={logo}
-              alt="Xyron Tech"
-            />
-
+            <img src={logo} alt="Xyron Tech" />
             <h2>
               <span>Xyron</span>Tech
             </h2>
-
           </div>
 
           <p>
@@ -83,7 +64,6 @@ const Footer = () => {
           </p>
 
           <div className="footer-social">
-
             <a
               href="https://www.youtube.com/@xyron_web_tech"
               target="_blank"
@@ -107,116 +87,53 @@ const Footer = () => {
             >
               <FaInstagram />
             </a>
-
           </div>
-
         </div>
 
-        {/* ================= QUICK LINKS ================= */}
-
         <div className="footer-column">
-
           <h3>Quick Links</h3>
 
           <ul>
-
             {quickLinks.map((item, index) => (
-
               <li key={index}>
-
                 <a href={item.href}>
-
                   <FaArrowRight />
-
                   {item.name}
-
                 </a>
-
               </li>
-
             ))}
-
           </ul>
-
         </div>
 
-        {/* ================= SERVICES ================= */}
-
         <div className="footer-column">
+          <h3>Contact Us</h3>
 
-          <h3>Services</h3>
-
-          <ul>
-
-            {services.map((service, index) => (
-
-              <li key={index}>
-
-                <FaArrowRight />
-
-                {service}
-
-              </li>
-
-            ))}
-
-          </ul>
-
-        </div>
-
-        {/* ================= CONTACT ================= */}
-
-        <div className="footer-column">
-
-          <h3>Get In Touch</h3>
-
-          <div className="footer-contact">
-
+          <div className="footer-contact-card">
             {contactInfo.map((item, index) => (
-
               <a
                 key={index}
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="contact-card"
+                className="footer-contact-item"
               >
-
-                <div className="contact-icon">
-
-                  {item.icon}
-
-                </div>
-
+                <div className="contact-icon">{item.icon}</div>
                 <div>
-
                   <h4>{item.title}</h4>
-
                   <p>{item.value}</p>
-
                 </div>
-
               </a>
-
             ))}
-
           </div>
-
         </div>
-
       </div>
 
-      {/* ================= COPYRIGHT ================= */}
-
       <div className="footer-bottom">
-
         <p>
           © 2026 <strong>XyronTech</strong>. All Rights Reserved.
           Crafted with ❤️ using React.
         </p>
-
       </div>
-
     </footer>
   );
 };

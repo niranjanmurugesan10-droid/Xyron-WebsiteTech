@@ -59,16 +59,19 @@ html[data-theme="dark"] #home {
 }
 
 .header-content h1 {
-  font-size: 72px;
-  line-height: 1.05;
+  font-size: clamp(2rem, 5.5vw, 4.25rem);
+  line-height: 1.15;
   font-weight: 800;
   color: var(--heading);
+  max-width: 16ch;
+  text-wrap: balance;
 }
 
 .highlights-2 {
   background: linear-gradient(90deg, var(--primary), var(--accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .header-content p {
@@ -193,13 +196,14 @@ html[data-theme="dark"] #home {
 
 @media (max-width: 1200px) {
   .header-content h1 {
-    font-size: 60px;
+    max-width: 18ch;
   }
 }
 
 @media (max-width: 992px) {
   #home {
-    padding: 80px 20px;
+    min-height: auto;
+    padding: 60px 20px 40px;
   }
 
   .Container {
@@ -208,12 +212,14 @@ html[data-theme="dark"] #home {
   }
 
   .header-content {
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .header-content h1 {
-    font-size: 52px;
+    max-width: 100%;
+    font-size: clamp(1.85rem, 7.5vw, 3rem);
+    line-height: 1.2;
   }
 
   .header-img {
@@ -223,7 +229,8 @@ html[data-theme="dark"] #home {
 
 @media (max-width: 768px) {
   #home {
-    padding: 50px 16px;
+    min-height: auto;
+    padding: 40px 16px 32px;
   }
 
   .Container {
@@ -231,7 +238,8 @@ html[data-theme="dark"] #home {
   }
 
   .header-content h1 {
-    font-size: 40px;
+    font-size: clamp(1.65rem, 8vw, 2.35rem);
+    line-height: 1.22;
   }
 
   .header-content p {
@@ -248,18 +256,12 @@ html[data-theme="dark"] #home {
     width: 100%;
   }
 
+  .header-btn2 {
+    display: none;
+  }
+
   .header-card {
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
-  }
-
-  .header-card-button {
-    width: 100%;
-  }
-
-  .header-card-button button {
-    width: 100%;
+    display: none;
   }
 }
 
@@ -274,7 +276,7 @@ html[data-theme="dark"] #home {
   }
 
   .header-content h1 {
-    font-size: 34px;
+    font-size: clamp(1.5rem, 7.2vw, 2rem);
   }
 
   .header-content p {

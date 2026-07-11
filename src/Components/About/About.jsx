@@ -20,24 +20,14 @@ const About = () => {
 
       {/* Header */}
 
-      <div className="about-header">
-
-        <span className="about-badge">
-          ✨ About XyronTech
-        </span>
-
-        <h2>
-          Building
-          <span> Digital Experiences </span>
-          That Inspire Growth
-        </h2>
-
-        <p>
+      <div className="about-header section-header">
+        <h2 className="section-title">About XyronTech</h2>
+        <p className="section-subtitle">
           We help startups, creators and businesses build beautiful,
           responsive and high-performing websites that leave a lasting
           impression.
         </p>
-
+        <span className="section-accent" aria-hidden="true" />
       </div>
 
       {/* Main */}
@@ -50,11 +40,12 @@ const About = () => {
 
           <div className="about-card">
 
-            <div className="icon-box">
-              <FiTarget />
-            </div>
+          <div className="about-card-icon">
+  <FiTarget />
+</div>
 
-            <div>
+
+            <div className="about-card-content">
               <h3>Our Mission</h3>
 
               <p>
@@ -67,11 +58,11 @@ const About = () => {
 
           <div className="about-card">
 
-            <div className="icon-box">
+            <div className="about-card-icon">
               <FiEye />
             </div>
 
-            <div>
+            <div className="about-card-content">
               <h3>Our Vision</h3>
 
               <p>
@@ -84,11 +75,11 @@ const About = () => {
 
           <div className="about-card">
 
-            <div className="icon-box">
+            <div className="about-card-icon">
               <TbDiamond />
             </div>
 
-            <div>
+            <div className="about-card-content">
               <h3>Our Values</h3>
 
               <p>
@@ -133,19 +124,25 @@ const About = () => {
           <div className="stats">
 
             <div className="stat-box">
-              <FiShield />
+              <div className="stat-icon">
+                <FiShield />
+              </div>
               <h3>100%</h3>
               <p>Commitment</p>
             </div>
 
             <div className="stat-box">
-              <TbRocket />
+              <div className="stat-icon">
+                <TbRocket />
+              </div>
               <h3>24/7</h3>
               <p>Support</p>
             </div>
 
             <div className="stat-box">
-              <TbDiamond />
+              <div className="stat-icon">
+                <TbDiamond />
+              </div>
               <h3>Premium</h3>
               <p>Quality</p>
             </div>

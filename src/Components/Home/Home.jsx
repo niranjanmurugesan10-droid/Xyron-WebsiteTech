@@ -6,20 +6,10 @@ const Header = () => {
   return (
     <section id="home">
       <div className="Container">
-
-        {/* Left Side */}
         <div className="header-content">
-
-          <div className="header-badge">
-            <span>•</span>
-            🚀 Available for Projects
-          </div>
-
           <h1>
-            <span className="highlights-1">We Build Modern</span>
-            <br />
-            <span className="highlights-2">Web Experiences</span>
-            <br />
+            <span className="highlights-1">We Build Modern </span>
+            <span className="highlights-2">Web Experiences </span>
             <span className="highlights-3">That Convert</span>
           </h1>
 
@@ -30,32 +20,31 @@ const Header = () => {
           </p>
 
           <div className="header-btn">
-        <button
-  className="header-btn1"
-  onClick={() =>
-    document.getElementById("projects")?.scrollIntoView({
-      behavior: "smooth",
-    })
-  }
->
-  View Our Work ↗
-</button>
+            <button
+              className="header-btn1"
+              onClick={() =>
+                document.getElementById("projects")?.scrollIntoView({
+                  behavior: "smooth",
+                })
+              }
+            >
+              View Our Work ↗
+            </button>
 
-         <button
-  className="header-btn2"
-  onClick={() =>
-    window.open(
-      "https://wa.me/919626782279?text=Hello%20XyronTech,%20I'm%20interested%20in%20building%20a%20website.",
-      "_blank"
-    )
-  }
->
-  Let's Talk
-</button>
+            <button
+              className="header-btn2"
+              onClick={() =>
+                window.open(
+                  "https://wa.me/919626782279?text=Hello%20XyronTech,%20I'm%20interested%20in%20building%20a%20website.",
+                  "_blank"
+                )
+              }
+            >
+              Let's Talk
+            </button>
           </div>
 
           <div className="header-card">
-
             <div className="header-card-content">
               <h3>
                 🎁 Free Consultation — No Charges, No Commitment
@@ -69,44 +58,23 @@ const Header = () => {
 
             <div className="header-card-button">
               <button
-  onClick={() =>
-    window.open(
-      "https://wa.me/919626782279?text=Hello%20XyronTech,%20I%20would%20like%20to%20book%20a%20free%20consultation.",
-      "_blank"
-    )
-  }
->
-  Book Free Call
-</button>
+                onClick={() =>
+                  window.open(
+                    "https://wa.me/919626782279?text=Hello%20XyronTech,%20I%20would%20like%20to%20book%20a%20free%20consultation.",
+                    "_blank"
+                  )
+                }
+              >
+                Book Free Call
+              </button>
             </div>
-
           </div>
-
         </div>
-
-        {/* Right Side */}
 
         <div className="header-img">
-          <img
-            src={headerimg}
-            alt="XyronTech Hero"
-          />
+          <img src={headerimg} alt="XyronTech Hero" />
         </div>
-
       </div>
-      {/* Hero scroll button (bottom center) */}
-      <button
-        className="hero-scroll"
-        onClick={() =>
-          document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })
-        }
-        aria-label="Scroll to projects"
-      >
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" shapeRendering="geometricPrecision">
-          <path d="M12 5v14" stroke="currentColor" strokeWidth="2.2" strokeLinecap="square" />
-          <path d="M6 13l6 6 6-6" stroke="currentColor" strokeWidth="2.2" strokeLinecap="square" strokeLinejoin="miter" />
-        </svg>
-      </button>
     </section>
   );
 };

@@ -1,51 +1,18 @@
+/* =========================================
+   SERVICES SECTION
+========================================= */
 
 #services {
   width: 100%;
-  margin-top: 40px;
-  padding: 80px 20px;
+  margin-top: 0;
+  padding: 60px 20px;
   background: linear-gradient(180deg, var(--section-bg-start), var(--section-bg-end));
 }
 
-/* theme handled via --section-bg-* variables in index.css */
-
 .services-header {
   max-width: 760px;
-  margin: 0 auto 60px;
+  margin: 0 auto 45px;
   text-align: center;
-}
-
-.services-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 24px;
-  background: var(--soft-bg);
-  color: var(--soft-text);
-  border: 1px solid var(--soft-border);
-  border-radius: 999px;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.services-header h2 {
-  margin-top: 24px;
-  font-size: 48px;
-  line-height: 1.2;
-  color: var(--heading);
-  font-weight: 700;
-}
-
-.services-header h2 span {
-  background: linear-gradient(90deg, var(--primary), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.services-header p {
-  margin-top: 18px;
-  font-size: 18px;
-  line-height: 1.8;
-  color: var(--text);
 }
 
 .services-grid {
@@ -56,79 +23,266 @@
   gap: 30px;
 }
 
+/* =========================================
+   SERVICE CARD - BASE STYLES
+========================================= */
+
+.service-card > * {
+  position: relative;
+  z-index: 2;
+}
+
 .service-card {
   position: relative;
-  padding: 32px 28px;
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 20px;
   overflow: hidden;
-  transition: all 0.35s ease;
-  box-shadow: var(--card-shadow);
+  z-index: 1;
+
+  padding: 36px;
+
+  border: 1px solid rgba(135, 140, 255, .22);
+  border-radius: 22px;
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, .45),
+    0 0 25px rgba(124, 92, 255, .10),
+    inset 0 1px rgba(255, 255, 255, .08);
+
+  transition: all .45s ease;
 }
+
+/* =========================================
+   UNIQUE COLORS FOR 9 CARDS
+   (Target .service-card THROUGH .service-card-wrapper)
+========================================= */
+
+/* 1 - Royal Blue */
+.service-card-wrapper:nth-child(1) .service-card {
+  background: linear-gradient(135deg, #0f172a, #1d4ed8, #3b82f6) !important;
+}
+
+/* 2 - Purple */
+.service-card-wrapper:nth-child(2) .service-card {
+  background: linear-gradient(135deg, #1e1b4b, #6d28d9, #a855f7) !important;
+}
+
+/* 3 - Emerald */
+.service-card-wrapper:nth-child(3) .service-card {
+  background: linear-gradient(135deg, #052e16, #047857, #10b981) !important;
+}
+
+/* 4 - Orange */
+.service-card-wrapper:nth-child(4) .service-card {
+  background: linear-gradient(135deg, #431407, #c2410c, #fb923c) !important;
+}
+
+/* 5 - Pink */
+.service-card-wrapper:nth-child(5) .service-card {
+  background: linear-gradient(135deg, #500724, #be185d, #ec4899) !important;
+}
+
+/* 6 - Cyan */
+.service-card-wrapper:nth-child(6) .service-card {
+  background: linear-gradient(135deg, #083344, #0891b2, #22d3ee) !important;
+}
+
+/* 7 - Red */
+.service-card-wrapper:nth-child(7) .service-card {
+  background: linear-gradient(135deg, #450a0a, #b91c1c, #ef4444) !important;
+}
+
+/* 8 - Gold */
+.service-card-wrapper:nth-child(8) .service-card {
+  background: linear-gradient(135deg, #3f2a00, #ca8a04, #facc15) !important;
+}
+
+/* 9 - Indigo */
+.service-card-wrapper:nth-child(9) .service-card {
+  background: linear-gradient(135deg, #1e1b4b, #4338ca, #818cf8) !important;
+}
+
+/* Center last card when odd count (if needed) */
+.services-grid .service-card-wrapper:last-child:nth-child(5) .service-card {
+  grid-column: 2;
+}
+
+/* =========================================
+   LIGHT THEME - SERVICE CARD
+========================================= */
 
 html[data-theme="light"] .service-card {
-  background: linear-gradient(180deg, #ffffff 0%, #f4f8ff 100%);
-  border-color: rgba(96,165,250,0.16);
-  box-shadow: 0 30px 80px rgba(15,23,42,0.10);
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 50%, #f4f8ff 100%) !important;
+  border-color: rgba(191, 219, 254, 0.5);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.04),
+    0 12px 32px rgba(15, 23, 42, 0.08);
 }
 
-.service-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, var(--primary), var(--accent));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: 0.35s ease;
-}
-
-.service-card:hover::before {
-  transform: scaleX(1);
-}
-
-.service-card:hover {
-  transform: translateY(-10px);
-  border-color: #BFDBFE;
-  box-shadow: var(--shadow-hover);
-}
+/* =========================================
+   ICON STYLE
+========================================= */
 
 .service-icon {
-  width: 76px;
-  height: 76px;
+  width: 72px;
+  height: 72px;
   border-radius: 20px;
+  background: #1e2a5a;
   display: flex;
-  justify-content: center;
   align-items: center;
-  background: var(--soft-bg);
-  color: var(--soft-text);
-  font-size: 32px;
-  margin-bottom: 24px;
+  justify-content: center;
+  margin-bottom: 22px;
+  box-shadow: 0 12px 30px rgba(30, 42, 90, 0.25);
   transition: all 0.35s ease;
 }
 
-.service-card:hover .service-icon {
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  color: #fff;
-  transform: rotate(10deg) scale(1.05);
+/* =========================================
+   CARD 1 - BLUE
+========================================= */
+.service-card-wrapper:nth-child(1) .service-icon {
+  background: #2563eb;
+}
+
+.service-card-wrapper:nth-child(1) .service-icon svg,
+.service-card-wrapper:nth-child(1) h3,
+.service-card-wrapper:nth-child(1) .service-tag {
+  color: #60a5fa;
+}
+
+/* =========================================
+   CARD 2 - PURPLE
+========================================= */
+.service-card-wrapper:nth-child(2) .service-icon {
+  background: #7c3aed;
+}
+
+.service-card-wrapper:nth-child(2) .service-icon svg,
+.service-card-wrapper:nth-child(2) h3,
+.service-card-wrapper:nth-child(2) .service-tag {
+  color: #c084fc;
+}
+
+/* =========================================
+   CARD 3 - EMERALD
+========================================= */
+.service-card-wrapper:nth-child(3) .service-icon {
+  background: #059669;
+}
+
+.service-card-wrapper:nth-child(3) .service-icon svg,
+.service-card-wrapper:nth-child(3) h3,
+.service-card-wrapper:nth-child(3) .service-tag {
+  color: #34d399;
+}
+
+/* =========================================
+   CARD 4 - ORANGE
+========================================= */
+.service-card-wrapper:nth-child(4) .service-icon {
+  background: #ea580c;
+}
+
+.service-card-wrapper:nth-child(4) .service-icon svg,
+.service-card-wrapper:nth-child(4) h3,
+.service-card-wrapper:nth-child(4) .service-tag {
+  color: #fb923c;
+}
+
+/* =========================================
+   CARD 5 - PINK
+========================================= */
+.service-card-wrapper:nth-child(5) .service-icon {
+  background: #db2777;
+}
+
+.service-card-wrapper:nth-child(5) .service-icon svg,
+.service-card-wrapper:nth-child(5) h3,
+.service-card-wrapper:nth-child(5) .service-tag {
+  color: #f472b6;
+}
+
+/* =========================================
+   CARD 6 - CYAN
+========================================= */
+.service-card-wrapper:nth-child(6) .service-icon {
+  background: #0891b2;
+}
+
+.service-card-wrapper:nth-child(6) .service-icon svg,
+.service-card-wrapper:nth-child(6) h3,
+.service-card-wrapper:nth-child(6) .service-tag {
+  color: #22d3ee;
+}
+
+/* =========================================
+   CARD 7 - RED
+========================================= */
+.service-card-wrapper:nth-child(7) .service-icon {
+  background: #dc2626;
+}
+
+.service-card-wrapper:nth-child(7) .service-icon svg,
+.service-card-wrapper:nth-child(7) h3,
+.service-card-wrapper:nth-child(7) .service-tag {
+  color: #f87171;
+}
+
+/* =========================================
+   CARD 8 - GOLD
+========================================= */
+.service-card-wrapper:nth-child(8) .service-icon {
+  background: #ca8a04;
+}
+
+.service-card-wrapper:nth-child(8) .service-icon svg,
+.service-card-wrapper:nth-child(8) h3,
+.service-card-wrapper:nth-child(8) .service-tag {
+  color: #facc15;
+}
+
+/* =========================================
+   CARD 9 - INDIGO
+========================================= */
+.service-card-wrapper:nth-child(9) .service-icon {
+  background: #4338ca;
+}
+
+.service-card-wrapper:nth-child(9) .service-icon svg,
+.service-card-wrapper:nth-child(9) h3,
+.service-card-wrapper:nth-child(9) .service-tag {
+  color: #a5b4fc;
+}
+
+/* =========================================
+   CARD TEXT STYLES
+========================================= */
+
+.service-card p {
+  color: #e5e7eb;
 }
 
 .service-card h3 {
-  font-size: 24px;
-  color: var(--heading);
-  margin-bottom: 12px;
+  font-size: 20px;
+  margin-bottom: 8px;
   font-weight: 700;
 }
 
 .service-card p {
-  color: var(--text);
-  line-height: 1.8;
-  font-size: 16px;
+  line-height: 1.65;
+  font-size: 15px;
+  font-weight: 400;
   margin-bottom: 24px;
+  text-wrap: pretty;
 }
+
+.service-card span {
+  color: #60a5fa;
+}
+
+/* =========================================
+   CARD BUTTON
+========================================= */
 
 .service-card button {
   display: inline-flex;
@@ -158,95 +312,407 @@ html[data-theme="light"] .service-card {
   transform: translateX(6px);
 }
 
+/* =========================================
+   SERVICE TAG
+========================================= */
+
+.service-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(96, 165, 250, 0.12);
+  border: 1px solid rgba(96, 165, 250, 0.25);
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .4px;
+  transition: all .35s ease;
+}
+
+/* =========================================
+   HOVER EFFECTS - HOVER SHADOWS
+========================================= */
+
+.service-card-wrapper:nth-child(1) .service-card:hover {
+  box-shadow: 0 20px 60px rgba(59, 130, 246, .45);
+}
+
+.service-card-wrapper:nth-child(2) .service-card:hover {
+  box-shadow: 0 20px 60px rgba(168, 85, 247, .45);
+}
+
+.service-card-wrapper:nth-child(3) .service-card:hover {
+  box-shadow: 0 20px 60px rgba(16, 185, 129, .45);
+}
+
+.service-card-wrapper:nth-child(4) .service-card:hover {
+  box-shadow: 0 20px 60px rgba(249, 115, 22, .45);
+}
+
+.service-card-wrapper:nth-child(5) .service-card:hover {
+  box-shadow: 0 20px 60px rgba(236, 72, 153, .45);
+}
+
+.service-card-wrapper:nth-child(6) .service-card:hover {
+  box-shadow: 0 20px 60px rgba(34, 211, 238, .45);
+}
+
+.service-card-wrapper:nth-child(7) .service-card:hover {
+  box-shadow: 0 20px 60px rgba(239, 68, 68, .45);
+}
+
+.service-card-wrapper:nth-child(8) .service-card:hover {
+  box-shadow: 0 20px 60px rgba(250, 204, 21, .45);
+}
+
+.service-card-wrapper:nth-child(9) .service-card:hover {
+  box-shadow: 0 20px 60px rgba(129, 140, 248, .45);
+}
+
+/* =========================================
+   TOP BORDER ANIMATION (scaleX)
+========================================= */
+
+/* Common */
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: .35s ease;
+  z-index: 1;
+}
+
+/* 1 - Blue */
+.service-card-wrapper:nth-child(1) .service-card::before {
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+}
+
+/* 2 - Purple */
+.service-card-wrapper:nth-child(2) .service-card::before {
+  background: linear-gradient(90deg, #8b5cf6, #c084fc);
+}
+
+/* 3 - Emerald */
+.service-card-wrapper:nth-child(3) .service-card::before {
+  background: linear-gradient(90deg, #10b981, #34d399);
+}
+
+/* 4 - Orange */
+.service-card-wrapper:nth-child(4) .service-card::before {
+  background: linear-gradient(90deg, #f97316, #fb923c);
+}
+
+/* 5 - Pink */
+.service-card-wrapper:nth-child(5) .service-card::before {
+  background: linear-gradient(90deg, #ec4899, #f472b6);
+}
+
+/* 6 - Cyan */
+.service-card-wrapper:nth-child(6) .service-card::before {
+  background: linear-gradient(90deg, #06b6d4, #22d3ee);
+}
+
+/* 7 - Red */
+.service-card-wrapper:nth-child(7) .service-card::before {
+  background: linear-gradient(90deg, #ef4444, #f87171);
+}
+
+/* 8 - Gold */
+.service-card-wrapper:nth-child(8) .service-card::before {
+  background: linear-gradient(90deg, #eab308, #facc15);
+}
+
+/* 9 - Indigo */
+.service-card-wrapper:nth-child(9) .service-card::before {
+  background: linear-gradient(90deg, #6366f1, #a5b4fc);
+}
+
+/* Hover Animation */
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* =========================================
+   OVERLAY ANIMATION (Radial gradient circle on hover)
+========================================= */
+
+.service-card::after {
+  content: "";
+  position: absolute;
+  top: -70px;
+  right: -70px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle,
+      rgba(96, 165, 250, .12),
+      transparent 70%);
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all .45s ease;
+  z-index: 1;
+}
+
+/* Card-specific overlay colors */
+.service-card-wrapper:nth-child(1) .service-card::after {
+  background: radial-gradient(circle, rgba(59, 130, 246, .15), transparent 70%);
+}
+
+.service-card-wrapper:nth-child(2) .service-card::after {
+  background: radial-gradient(circle, rgba(168, 85, 247, .15), transparent 70%);
+}
+
+.service-card-wrapper:nth-child(3) .service-card::after {
+  background: radial-gradient(circle, rgba(16, 185, 129, .15), transparent 70%);
+}
+
+.service-card-wrapper:nth-child(4) .service-card::after {
+  background: radial-gradient(circle, rgba(249, 115, 22, .15), transparent 70%);
+}
+
+.service-card-wrapper:nth-child(5) .service-card::after {
+  background: radial-gradient(circle, rgba(236, 72, 153, .15), transparent 70%);
+}
+
+.service-card-wrapper:nth-child(6) .service-card::after {
+  background: radial-gradient(circle, rgba(6, 182, 212, .15), transparent 70%);
+}
+
+.service-card-wrapper:nth-child(7) .service-card::after {
+  background: radial-gradient(circle, rgba(239, 68, 68, .15), transparent 70%);
+}
+
+.service-card-wrapper:nth-child(8) .service-card::after {
+  background: radial-gradient(circle, rgba(234, 179, 8, .15), transparent 70%);
+}
+
+.service-card-wrapper:nth-child(9) .service-card::after {
+  background: radial-gradient(circle, rgba(99, 102, 241, .15), transparent 70%);
+}
+
+/* Overlay appears on hover */
+.service-card:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* =========================================
+   ICON & TAG HOVER ANIMATIONS
+========================================= */
+
+.service-card:hover .service-icon {
+  transform: translateY(-6px) scale(1.1);
+  filter: brightness(1.15);
+}
+
+.service-card:hover .service-tag {
+  transform: scale(1.05);
+  filter: brightness(1.15);
+}
+
+.service-card .service-tag {
+  transition: all .35s ease;
+}
+
+/* 1 - Blue */
+.service-card-wrapper:nth-child(1) .service-card:hover .service-tag {
+  background: #3b82f6;
+  border-color: #60a5fa;
+  color: #fff;
+}
+
+/* 2 - Purple */
+.service-card-wrapper:nth-child(2) .service-card:hover .service-tag {
+  background: #8b5cf6;
+  border-color: #c084fc;
+  color: #fff;
+}
+
+/* 3 - Green */
+.service-card-wrapper:nth-child(3) .service-card:hover .service-tag {
+  background: #10b981;
+  border-color: #34d399;
+  color: #fff;
+}
+
+/* 4 - Orange */
+.service-card-wrapper:nth-child(4) .service-card:hover .service-tag {
+  background: #f97316;
+  border-color: #fb923c;
+  color: #fff;
+}
+
+/* 5 - Pink */
+.service-card-wrapper:nth-child(5) .service-card:hover .service-tag {
+  background: #ec4899;
+  border-color: #f472b6;
+  color: #fff;
+}
+
+/* 6 - Cyan */
+.service-card-wrapper:nth-child(6) .service-card:hover .service-tag {
+  background: #06b6d4;
+  border-color: #67e8f9;
+  color: #fff;
+}
+
+/* 7 - Red */
+.service-card-wrapper:nth-child(7) .service-card:hover .service-tag {
+  background: #ef4444;
+  border-color: #f87171;
+  color: #fff;
+}
+
+/* 8 - Gold */
+.service-card-wrapper:nth-child(8) .service-card:hover .service-tag {
+  background: #eab308;
+  border-color: #fde047;
+  color: #111827;
+}
+
+/* 9 - Indigo */
+.service-card-wrapper:nth-child(9) .service-card:hover .service-tag {
+  background: #6366f1;
+  border-color: #a5b4fc;
+  color: #fff;
+}
+
+/* =========================================
+   LIGHT THEME - TEXT & TAG
+========================================= */
+
+html[data-theme="light"] .service-card h3 {
+  color: #0f172a;
+}
+
+html[data-theme="light"] .service-card p {
+  color: #475569;
+}
+
+html[data-theme="light"] .service-tag {
+  color: #2563eb;
+}
+
+html[data-theme="light"] .service-card:hover .service-tag {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  border-color: transparent;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
 @media (max-width: 1024px) {
   #services {
     padding: 80px 20px;
   }
 
   .services-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
   }
-
-  .services-header h2 {
-    font-size: 40px;
-  }
 }
+
+/* =========================================
+   MOBILE (≤768px)
+========================================= */
 
 @media (max-width: 768px) {
   #services {
-    padding: 50px 16px;
+    padding: 40px 16px 40px;
+    background: #ffffff;
   }
 
   .services-header {
-    margin-bottom: 50px;
-  }
-
-  .services-badge {
-    padding: 10px 20px;
-    font-size: 13px;
-  }
-
-  .services-header h2 {
-    font-size: 34px;
-    line-height: 1.25;
-  }
-
-  .services-header p {
-    font-size: 15px;
-    line-height: 1.7;
-    margin-top: 18px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1000;
   }
 
   .services-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    display: block;
+    max-width: 100%;
+    position: relative;
+  }
+
+  /* Sticky stacking cards */
+  .service-card-wrapper {
+    position: sticky;
+    top: 90px;
+    margin-bottom: 24px;
+  }
+
+  .service-card-wrapper:nth-child(1) {
+    z-index: 1;
+  }
+
+  .service-card-wrapper:nth-child(2) {
+    z-index: 2;
+  }
+
+  .service-card-wrapper:nth-child(3) {
+    z-index: 3;
+  }
+
+  .service-card-wrapper:nth-child(4) {
+    z-index: 4;
+  }
+
+  .service-card-wrapper:nth-child(5) {
+    z-index: 5;
+  }
+
+  .service-card-wrapper:nth-child(6) {
+    z-index: 6;
+  }
+
+  .service-card-wrapper:nth-child(7) {
+    z-index: 7;
+  }
+
+  .service-card-wrapper:nth-child(8) {
+    z-index: 8;
+  }
+
+  .service-card-wrapper:nth-child(9) {
+    z-index: 9;
+  }
+
+  .service-card-wrapper:last-child {
+    position: relative;
+    top: auto;
+    margin-bottom: 0;
   }
 
   .service-card {
-    padding: 24px 20px;
-    border-radius: 18px;
-  }
-
-  .service-icon {
-    width: 66px;
-    height: 66px;
-    font-size: 28px;
-    margin-bottom: 20px;
-  }
-
-  .service-card h3 {
-    font-size: 21px;
-  }
-
-  .service-card p {
-    font-size: 15px;
-    margin-bottom: 20px;
-  }
-
-  .service-card button {
-    width: 100%;
+    border-radius: 24px;
+    padding: 32px 24px;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .services-header h2 {
-    font-size: 30px;
-  }
-
-  .services-header p {
-    font-size: 14px;
-  }
-
-  .service-card {
-    padding: 22px 18px;
+    align-items: center;
+    text-align: center;
+    box-shadow:
+      0 -12px 35px rgba(0, 0, 0, 0.35),
+      0 10px 30px rgba(0, 0, 0, 0.25);
   }
 
   .service-icon {
-    width: 62px;
-    height: 62px;
-    font-size: 26px;
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
   }
 
   .service-card h3 {
@@ -255,5 +721,19 @@ html[data-theme="light"] .service-card {
 
   .service-card p {
     font-size: 14px;
+    line-height: 1.6;
+    max-width: 280px;
+  }
+
+  .service-tag {
+    margin-top: 16px;
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+
+  html[data-theme="light"] .service-card {
+    box-shadow:
+      0 -12px 35px rgba(37, 99, 235, 0.12),
+      0 10px 30px rgba(15, 23, 42, 0.08);
   }
 }

@@ -18,14 +18,14 @@ const projects = [
   image: srikrishnarestaurant,
   title: "Sri Krishna Restaurant",
   desc: "A complete restaurant management website featuring digital menu, QR code ordering, online food ordering, billing system, order tracking, and admin dashboard for seamless restaurant operations.",
-  link: "https://nttechworks5.github.io/-Sri-Krishna-Restaurant/"
+  link: "https://sri-krishna-restaurant-git-main-nttechworks5s-projects.vercel.app/"
 },
 
   {
     image: portfolio,
 title: "APK Infotech Pvt. Ltd.",
 desc: "A modern corporate website built for APK Infotech showcasing IT services, internships, placement support, training programs, and responsive business solutions.",
-link: "https://apkinfotech.in/"
+link: "https://apk-info-tech-94vd.vercel.app"
   }
 ];
 const Projects = () => {
@@ -34,22 +34,13 @@ const Projects = () => {
 
   <section className="projects-section" id="projects">
 
-      <div className="projects-header">
-
-        <span className="projects-badge">
-          ✨ Our Projects
-        </span>
-
-        <h2>
-          Projects
-          <span> We've Delivered</span>
-        </h2>
-
-        <p>
+      <div className="projects-header section-header">
+        <h2 className="section-title">Our Projects</h2>
+        <p className="section-subtitle">
           Discover some of our latest projects crafted with
           modern technologies and exceptional user experience.
         </p>
-
+        <span className="section-accent" aria-hidden="true" />
       </div>
 
       <div className="projects-grid">

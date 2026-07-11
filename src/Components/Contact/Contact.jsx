@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Contact.css";
 
 import {
@@ -18,14 +18,14 @@ const contactInfo = [
   {
     icon: <FiPhone />,
     title: "Call Us",
-    value: "+91 98765 43210",
-    link: "tel:+919876543210",
+    value: "+91 99944 72896, +91 96267 82279",
+    link: "tel:+919994472896",
   },
   {
     icon: <FaWhatsapp />,
     title: "WhatsApp",
-    value: "+91 9843336980",
-    link: "https://wa.me/9843336980",
+    value: "+91 9843336980, +91 99944 72896",
+    link: "https://wa.me/919994472896",
   },
   {
     icon: <FiMail />,
@@ -42,35 +42,22 @@ const contactInfo = [
 ];
 
 const Contact = () => {
+  const [selectedService, setSelectedService] = useState("");
+  const [customService, setCustomService] = useState("");
+
   return (
     <section className="contact-section" id="contact">
-
-      {/* Header */}
-
-      <div className="contact-header">
-
-        <span className="contact-badge">
-          ✦ Contact Us
-        </span>
-
-        <h2>
-          Let's Build
-          <span> Something Amazing</span>
-        </h2>
-
-        <p>
+      <div className="contact-header section-header">
+        <h2 className="section-title">Contact Us</h2>
+        <p className="section-subtitle">
           Have an idea or project in mind? We'd love to hear from you.
           Fill out the form below and we'll get back to you shortly.
         </p>
-
+        <span className="section-accent" aria-hidden="true" />
       </div>
 
       <div className="contact-wrapper">
-
-        {/* LEFT */}
-
         <div className="contact-info-card">
-
           <h3>Get In Touch</h3>
 
           <p>
@@ -79,9 +66,7 @@ const Contact = () => {
           </p>
 
           <div className="contact-list">
-
             {contactInfo.map((item, index) => (
-
               <a
                 href={item.link}
                 key={index}
@@ -89,29 +74,16 @@ const Contact = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-
-                <div className="contact-icon">
-                  {item.icon}
-                </div>
-
+                <div className="contact-icon">{item.icon}</div>
                 <div>
-
                   <h4>{item.title}</h4>
-
                   <span>{item.value}</span>
-
                 </div>
-
               </a>
-
             ))}
-
           </div>
 
-          {/* Social */}
-
           <div className="social-row">
-
             <a
               href="https://www.youtube.com/@NT_techstudio"
               target="_blank"
@@ -131,27 +103,17 @@ const Contact = () => {
               <FaInstagram />
               <span>Instagram</span>
             </a>
-
           </div>
-
         </div>
 
-        {/* RIGHT */}
-
         <div className="contact-form-card">
-
-          <h3 className="contact-form-title">
-            Send Message
-          </h3>
+          <h3 className="contact-form-title">Send Message</h3>
 
           <form
             className="contact-form"
             action="https://api.web3forms.com/submit"
             method="POST"
           >
-
-            {/* Web3Forms */}
-
             <input
               type="hidden"
               name="access_key"
@@ -176,8 +138,13 @@ const Contact = () => {
               style={{ display: "none" }}
             />
 
-            <div className="input-row">
+            <input
+              type="hidden"
+              name="service"
+              value={selectedService === "Other" ? customService : selectedService}
+            />
 
+            <div className="input-row">
               <input
                 type="text"
                 name="name"
@@ -191,45 +158,32 @@ const Contact = () => {
                 placeholder="Email Address"
                 required
               />
-
             </div>
 
-            <div className="input-row">
-
-              <select name="service" required>
-
-                <option value="">
-                  Select Service
-                </option>
-
+            <div className={`input-row ${selectedService === "Other" ? "service-other-row" : ""}`}>
+              <select
+                value={selectedService}
+                onChange={(e) => setSelectedService(e.target.value)}
+                required
+              >
+                <option value="">Select Service</option>
                 <option>Business Website</option>
-
                 <option>E-Commerce</option>
-
                 <option>Portfolio Website</option>
-
                 <option>Web Application</option>
-
                 <option>Landing Page</option>
-
+                <option>Other</option>
               </select>
 
-              <select name="budget" required>
-
-                <option value="">
-                  Budget
-                </option>
-
-                <option>₹4K - ₹10K</option>
-
-                <option>₹10K - ₹25K</option>
-
-                <option>₹25K - ₹50K</option>
-
-                <option>Above ₹50K</option>
-
-              </select>
-
+              {selectedService === "Other" && (
+                <input
+                  type="text"
+                  placeholder="Enter your service"
+                  value={customService}
+                  onChange={(e) => setCustomService(e.target.value)}
+                  required
+                />
+              )}
             </div>
 
             <textarea
@@ -240,19 +194,12 @@ const Contact = () => {
             ></textarea>
 
             <button type="submit">
-
               Send Message
-
               <FiSend />
-
             </button>
-
           </form>
-
         </div>
-
       </div>
-
     </section>
   );
 };
