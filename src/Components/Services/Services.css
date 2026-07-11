@@ -4,736 +4,763 @@
 
 #services {
   width: 100%;
-  margin-top: 0;
-  padding: 60px 20px;
-  background: linear-gradient(180deg, var(--section-bg-start), var(--section-bg-end));
+  padding: 80px 20px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    var(--section-bg-start),
+    var(--section-bg-end)
+  );
 }
 
 .services-header {
   max-width: 760px;
-  margin: 0 auto 45px;
+  margin: 0 auto 60px;
   text-align: center;
 }
 
 .services-grid {
   max-width: 1250px;
-  margin: auto;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 30px;
 }
 
 /* =========================================
-   SERVICE CARD - BASE STYLES
+   CARD
 ========================================= */
-
-.service-card > * {
-  position: relative;
-  z-index: 2;
-}
 
 .service-card {
   position: relative;
   overflow: hidden;
-  z-index: 1;
 
+  min-height: 380px;
   padding: 36px;
 
-  border: 1px solid rgba(135, 140, 255, .22);
-  border-radius: 22px;
+  border-radius: 24px;
 
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-
-  box-shadow:
-    0 12px 35px rgba(0, 0, 0, .45),
-    0 0 25px rgba(124, 92, 255, .10),
-    inset 0 1px rgba(255, 255, 255, .08);
-
-  transition: all .45s ease;
-}
-
-/* =========================================
-   UNIQUE COLORS FOR 9 CARDS
-   (Target .service-card THROUGH .service-card-wrapper)
-========================================= */
-
-/* 1 - Royal Blue */
-.service-card-wrapper:nth-child(1) .service-card {
-  background: linear-gradient(135deg, #0f172a, #1d4ed8, #3b82f6) !important;
-}
-
-/* 2 - Purple */
-.service-card-wrapper:nth-child(2) .service-card {
-  background: linear-gradient(135deg, #1e1b4b, #6d28d9, #a855f7) !important;
-}
-
-/* 3 - Emerald */
-.service-card-wrapper:nth-child(3) .service-card {
-  background: linear-gradient(135deg, #052e16, #047857, #10b981) !important;
-}
-
-/* 4 - Orange */
-.service-card-wrapper:nth-child(4) .service-card {
-  background: linear-gradient(135deg, #431407, #c2410c, #fb923c) !important;
-}
-
-/* 5 - Pink */
-.service-card-wrapper:nth-child(5) .service-card {
-  background: linear-gradient(135deg, #500724, #be185d, #ec4899) !important;
-}
-
-/* 6 - Cyan */
-.service-card-wrapper:nth-child(6) .service-card {
-  background: linear-gradient(135deg, #083344, #0891b2, #22d3ee) !important;
-}
-
-/* 7 - Red */
-.service-card-wrapper:nth-child(7) .service-card {
-  background: linear-gradient(135deg, #450a0a, #b91c1c, #ef4444) !important;
-}
-
-/* 8 - Gold */
-.service-card-wrapper:nth-child(8) .service-card {
-  background: linear-gradient(135deg, #3f2a00, #ca8a04, #facc15) !important;
-}
-
-/* 9 - Indigo */
-.service-card-wrapper:nth-child(9) .service-card {
-  background: linear-gradient(135deg, #1e1b4b, #4338ca, #818cf8) !important;
-}
-
-/* Center last card when odd count (if needed) */
-.services-grid .service-card-wrapper:last-child:nth-child(5) .service-card {
-  grid-column: 2;
-}
-
-/* =========================================
-   LIGHT THEME - SERVICE CARD
-========================================= */
-
-html[data-theme="light"] .service-card {
-  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 50%, #f4f8ff 100%) !important;
-  border-color: rgba(191, 219, 254, 0.5);
-  box-shadow:
-    0 1px 3px rgba(0, 0, 0, 0.04),
-    0 12px 32px rgba(15, 23, 42, 0.08);
-}
-
-/* =========================================
-   ICON STYLE
-========================================= */
-
-.service-icon {
-  width: 72px;
-  height: 72px;
-  border-radius: 20px;
-  background: #1e2a5a;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  margin-bottom: 22px;
-  box-shadow: 0 12px 30px rgba(30, 42, 90, 0.25);
-  transition: all 0.35s ease;
+
+  transition: .4s ease;
+
+  border: 1px solid rgba(255,255,255,.12);
+}
+
+.service-card>*{
+  position:relative;
+  z-index:2;
+}
+
+.service-card:hover{
+  transform:translateY(-10px);
 }
 
 /* =========================================
-   CARD 1 - BLUE
+   ICON
 ========================================= */
-.service-card-wrapper:nth-child(1) .service-icon {
-  background: #2563eb;
-}
 
-.service-card-wrapper:nth-child(1) .service-icon svg,
-.service-card-wrapper:nth-child(1) h3,
-.service-card-wrapper:nth-child(1) .service-tag {
-  color: #60a5fa;
+.service-icon{
+
+  width:72px;
+  height:72px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:20px;
+
+  font-size:30px;
+
+  margin-bottom:24px;
+
 }
 
 /* =========================================
-   CARD 2 - PURPLE
+   TEXT
 ========================================= */
-.service-card-wrapper:nth-child(2) .service-icon {
-  background: #7c3aed;
+
+.service-card h3{
+
+  font-size:22px;
+  font-weight:700;
+
+  margin-bottom:14px;
+
 }
 
-.service-card-wrapper:nth-child(2) .service-icon svg,
-.service-card-wrapper:nth-child(2) h3,
-.service-card-wrapper:nth-child(2) .service-tag {
-  color: #c084fc;
+.service-card p{
+
+  font-size:15px;
+  line-height:1.8;
+
+  margin-bottom:26px;
+
+  color:#e5e7eb;
+
 }
 
 /* =========================================
-   CARD 3 - EMERALD
+   TAG
 ========================================= */
-.service-card-wrapper:nth-child(3) .service-icon {
-  background: #059669;
-}
 
-.service-card-wrapper:nth-child(3) .service-icon svg,
-.service-card-wrapper:nth-child(3) h3,
-.service-card-wrapper:nth-child(3) .service-tag {
-  color: #34d399;
+.service-tag{
+
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  width:max-content;
+
+  padding:10px 20px;
+
+  border-radius:999px;
+
+  font-size:13px;
+  font-weight:600;
+
+  transition:.35s;
+
 }
 
 /* =========================================
-   CARD 4 - ORANGE
+   GLOW
 ========================================= */
-.service-card-wrapper:nth-child(4) .service-icon {
-  background: #ea580c;
-}
 
-.service-card-wrapper:nth-child(4) .service-icon svg,
-.service-card-wrapper:nth-child(4) h3,
-.service-card-wrapper:nth-child(4) .service-tag {
-  color: #fb923c;
+.card-glow{
+
+  position:absolute;
+
+  width:220px;
+  height:220px;
+
+  right:-80px;
+  top:-80px;
+
+  border-radius:50%;
+
+  filter:blur(55px);
+
+  opacity:.18;
+
 }
 
 /* =========================================
-   CARD 5 - PINK
-========================================= */
-.service-card-wrapper:nth-child(5) .service-icon {
-  background: #db2777;
-}
-
-.service-card-wrapper:nth-child(5) .service-icon svg,
-.service-card-wrapper:nth-child(5) h3,
-.service-card-wrapper:nth-child(5) .service-tag {
-  color: #f472b6;
-}
-
-/* =========================================
-   CARD 6 - CYAN
-========================================= */
-.service-card-wrapper:nth-child(6) .service-icon {
-  background: #0891b2;
-}
-
-.service-card-wrapper:nth-child(6) .service-icon svg,
-.service-card-wrapper:nth-child(6) h3,
-.service-card-wrapper:nth-child(6) .service-tag {
-  color: #22d3ee;
-}
-
-/* =========================================
-   CARD 7 - RED
-========================================= */
-.service-card-wrapper:nth-child(7) .service-icon {
-  background: #dc2626;
-}
-
-.service-card-wrapper:nth-child(7) .service-icon svg,
-.service-card-wrapper:nth-child(7) h3,
-.service-card-wrapper:nth-child(7) .service-tag {
-  color: #f87171;
-}
-
-/* =========================================
-   CARD 8 - GOLD
-========================================= */
-.service-card-wrapper:nth-child(8) .service-icon {
-  background: #ca8a04;
-}
-
-.service-card-wrapper:nth-child(8) .service-icon svg,
-.service-card-wrapper:nth-child(8) h3,
-.service-card-wrapper:nth-child(8) .service-tag {
-  color: #facc15;
-}
-
-/* =========================================
-   CARD 9 - INDIGO
-========================================= */
-.service-card-wrapper:nth-child(9) .service-icon {
-  background: #4338ca;
-}
-
-.service-card-wrapper:nth-child(9) .service-icon svg,
-.service-card-wrapper:nth-child(9) h3,
-.service-card-wrapper:nth-child(9) .service-tag {
-  color: #a5b4fc;
-}
-
-/* =========================================
-   CARD TEXT STYLES
+   SHINE
 ========================================= */
 
-.service-card p {
-  color: #e5e7eb;
-}
+.card-shine{
 
-.service-card h3 {
-  font-size: 20px;
-  margin-bottom: 8px;
-  font-weight: 700;
-}
+  position:absolute;
 
-.service-card p {
-  line-height: 1.65;
-  font-size: 15px;
-  font-weight: 400;
-  margin-bottom: 24px;
-  text-wrap: pretty;
-}
+  inset:0;
 
-.service-card span {
-  color: #60a5fa;
-}
+  pointer-events:none;
 
-/* =========================================
-   CARD BUTTON
-========================================= */
-
-.service-card button {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 12px;
-  background: var(--soft-bg);
-  color: var(--soft-text);
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.35s ease;
-}
-
-.service-card button svg {
-  transition: 0.35s ease;
-}
-
-.service-card:hover button {
-  background: var(--primary);
-  color: #fff;
-}
-
-.service-card:hover button svg {
-  transform: translateX(6px);
-}
-
-/* =========================================
-   SERVICE TAG
-========================================= */
-
-.service-tag {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 12px;
-  padding: 10px 18px;
-  border-radius: 999px;
-  background: rgba(96, 165, 250, 0.12);
-  border: 1px solid rgba(96, 165, 250, 0.25);
-  color: #2563eb;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: .4px;
-  transition: all .35s ease;
-}
-
-/* =========================================
-   HOVER EFFECTS - HOVER SHADOWS
-========================================= */
-
-.service-card-wrapper:nth-child(1) .service-card:hover {
-  box-shadow: 0 20px 60px rgba(59, 130, 246, .45);
-}
-
-.service-card-wrapper:nth-child(2) .service-card:hover {
-  box-shadow: 0 20px 60px rgba(168, 85, 247, .45);
-}
-
-.service-card-wrapper:nth-child(3) .service-card:hover {
-  box-shadow: 0 20px 60px rgba(16, 185, 129, .45);
-}
-
-.service-card-wrapper:nth-child(4) .service-card:hover {
-  box-shadow: 0 20px 60px rgba(249, 115, 22, .45);
-}
-
-.service-card-wrapper:nth-child(5) .service-card:hover {
-  box-shadow: 0 20px 60px rgba(236, 72, 153, .45);
-}
-
-.service-card-wrapper:nth-child(6) .service-card:hover {
-  box-shadow: 0 20px 60px rgba(34, 211, 238, .45);
-}
-
-.service-card-wrapper:nth-child(7) .service-card:hover {
-  box-shadow: 0 20px 60px rgba(239, 68, 68, .45);
-}
-
-.service-card-wrapper:nth-child(8) .service-card:hover {
-  box-shadow: 0 20px 60px rgba(250, 204, 21, .45);
-}
-
-.service-card-wrapper:nth-child(9) .service-card:hover {
-  box-shadow: 0 20px 60px rgba(129, 140, 248, .45);
-}
-
-/* =========================================
-   TOP BORDER ANIMATION (scaleX)
-========================================= */
-
-/* Common */
-.service-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: .35s ease;
-  z-index: 1;
-}
-
-/* 1 - Blue */
-.service-card-wrapper:nth-child(1) .service-card::before {
-  background: linear-gradient(90deg, #3b82f6, #60a5fa);
-}
-
-/* 2 - Purple */
-.service-card-wrapper:nth-child(2) .service-card::before {
-  background: linear-gradient(90deg, #8b5cf6, #c084fc);
-}
-
-/* 3 - Emerald */
-.service-card-wrapper:nth-child(3) .service-card::before {
-  background: linear-gradient(90deg, #10b981, #34d399);
-}
-
-/* 4 - Orange */
-.service-card-wrapper:nth-child(4) .service-card::before {
-  background: linear-gradient(90deg, #f97316, #fb923c);
-}
-
-/* 5 - Pink */
-.service-card-wrapper:nth-child(5) .service-card::before {
-  background: linear-gradient(90deg, #ec4899, #f472b6);
-}
-
-/* 6 - Cyan */
-.service-card-wrapper:nth-child(6) .service-card::before {
-  background: linear-gradient(90deg, #06b6d4, #22d3ee);
-}
-
-/* 7 - Red */
-.service-card-wrapper:nth-child(7) .service-card::before {
-  background: linear-gradient(90deg, #ef4444, #f87171);
-}
-
-/* 8 - Gold */
-.service-card-wrapper:nth-child(8) .service-card::before {
-  background: linear-gradient(90deg, #eab308, #facc15);
-}
-
-/* 9 - Indigo */
-.service-card-wrapper:nth-child(9) .service-card::before {
-  background: linear-gradient(90deg, #6366f1, #a5b4fc);
-}
-
-/* Hover Animation */
-.service-card:hover::before {
-  transform: scaleX(1);
-}
-
-/* =========================================
-   OVERLAY ANIMATION (Radial gradient circle on hover)
-========================================= */
-
-.service-card::after {
-  content: "";
-  position: absolute;
-  top: -70px;
-  right: -70px;
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
   background:
-    radial-gradient(circle,
-      rgba(96, 165, 250, .12),
-      transparent 70%);
-  pointer-events: none;
-  opacity: 0;
-  transform: scale(0.5);
-  transition: all .45s ease;
-  z-index: 1;
-}
+  linear-gradient(
+    135deg,
+    rgba(255,255,255,.12),
+    transparent 30%,
+    transparent 70%,
+    rgba(255,255,255,.05)
+  );
 
-/* Card-specific overlay colors */
-.service-card-wrapper:nth-child(1) .service-card::after {
-  background: radial-gradient(circle, rgba(59, 130, 246, .15), transparent 70%);
-}
-
-.service-card-wrapper:nth-child(2) .service-card::after {
-  background: radial-gradient(circle, rgba(168, 85, 247, .15), transparent 70%);
-}
-
-.service-card-wrapper:nth-child(3) .service-card::after {
-  background: radial-gradient(circle, rgba(16, 185, 129, .15), transparent 70%);
-}
-
-.service-card-wrapper:nth-child(4) .service-card::after {
-  background: radial-gradient(circle, rgba(249, 115, 22, .15), transparent 70%);
-}
-
-.service-card-wrapper:nth-child(5) .service-card::after {
-  background: radial-gradient(circle, rgba(236, 72, 153, .15), transparent 70%);
-}
-
-.service-card-wrapper:nth-child(6) .service-card::after {
-  background: radial-gradient(circle, rgba(6, 182, 212, .15), transparent 70%);
-}
-
-.service-card-wrapper:nth-child(7) .service-card::after {
-  background: radial-gradient(circle, rgba(239, 68, 68, .15), transparent 70%);
-}
-
-.service-card-wrapper:nth-child(8) .service-card::after {
-  background: radial-gradient(circle, rgba(234, 179, 8, .15), transparent 70%);
-}
-
-.service-card-wrapper:nth-child(9) .service-card::after {
-  background: radial-gradient(circle, rgba(99, 102, 241, .15), transparent 70%);
-}
-
-/* Overlay appears on hover */
-.service-card:hover::after {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* =========================================
-   ICON & TAG HOVER ANIMATIONS
-========================================= */
-
-.service-card:hover .service-icon {
-  transform: translateY(-6px) scale(1.1);
-  filter: brightness(1.15);
-}
-
-.service-card:hover .service-tag {
-  transform: scale(1.05);
-  filter: brightness(1.15);
-}
-
-.service-card .service-tag {
-  transition: all .35s ease;
-}
-
-/* 1 - Blue */
-.service-card-wrapper:nth-child(1) .service-card:hover .service-tag {
-  background: #3b82f6;
-  border-color: #60a5fa;
-  color: #fff;
-}
-
-/* 2 - Purple */
-.service-card-wrapper:nth-child(2) .service-card:hover .service-tag {
-  background: #8b5cf6;
-  border-color: #c084fc;
-  color: #fff;
-}
-
-/* 3 - Green */
-.service-card-wrapper:nth-child(3) .service-card:hover .service-tag {
-  background: #10b981;
-  border-color: #34d399;
-  color: #fff;
-}
-
-/* 4 - Orange */
-.service-card-wrapper:nth-child(4) .service-card:hover .service-tag {
-  background: #f97316;
-  border-color: #fb923c;
-  color: #fff;
-}
-
-/* 5 - Pink */
-.service-card-wrapper:nth-child(5) .service-card:hover .service-tag {
-  background: #ec4899;
-  border-color: #f472b6;
-  color: #fff;
-}
-
-/* 6 - Cyan */
-.service-card-wrapper:nth-child(6) .service-card:hover .service-tag {
-  background: #06b6d4;
-  border-color: #67e8f9;
-  color: #fff;
-}
-
-/* 7 - Red */
-.service-card-wrapper:nth-child(7) .service-card:hover .service-tag {
-  background: #ef4444;
-  border-color: #f87171;
-  color: #fff;
-}
-
-/* 8 - Gold */
-.service-card-wrapper:nth-child(8) .service-card:hover .service-tag {
-  background: #eab308;
-  border-color: #fde047;
-  color: #111827;
-}
-
-/* 9 - Indigo */
-.service-card-wrapper:nth-child(9) .service-card:hover .service-tag {
-  background: #6366f1;
-  border-color: #a5b4fc;
-  color: #fff;
-}
-
-/* =========================================
-   LIGHT THEME - TEXT & TAG
-========================================= */
-
-html[data-theme="light"] .service-card h3 {
-  color: #0f172a;
-}
-
-html[data-theme="light"] .service-card p {
-  color: #475569;
-}
-
-html[data-theme="light"] .service-tag {
-  color: #2563eb;
-}
-
-html[data-theme="light"] .service-card:hover .service-tag {
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
-  color: white;
-  border-color: transparent;
 }
 
 /* =========================================
    TABLET
 ========================================= */
 
-@media (max-width: 1024px) {
-  #services {
-    padding: 80px 20px;
-  }
+@media (max-width:1024px){
 
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
+.services-grid{
+
+  grid-template-columns:repeat(2,1fr);
+
+  gap:24px;
+
 }
 
+.service-card{
+
+  min-height:340px;
+
+}
+
+}
+/* =========================================
+   CARD 1 - BLUE
+========================================= */
+
+.card-1{
+  background:linear-gradient(135deg,#0f172a,#1d4ed8,#3b82f6);
+}
+
+.card-1 .service-icon{
+  background:#2563eb;
+  color:#fff;
+}
+
+.card-1 .service-tag{
+  background:rgba(59,130,246,.15);
+  color:#93c5fd;
+  border:1px solid rgba(147,197,253,.3);
+}
+
+.card-1 .card-glow{
+  background:#3b82f6;
+}
+
+.card-1:hover{
+  box-shadow:0 25px 60px rgba(59,130,246,.35);
+}
+
+
+/* =========================================
+   CARD 2 - PURPLE
+========================================= */
+
+.card-2{
+  background:linear-gradient(135deg,#1e1b4b,#6d28d9,#a855f7);
+}
+
+.card-2 .service-icon{
+  background:#7c3aed;
+  color:#fff;
+}
+
+.card-2 .service-tag{
+  background:rgba(168,85,247,.15);
+  color:#d8b4fe;
+  border:1px solid rgba(216,180,254,.3);
+}
+
+.card-2 .card-glow{
+  background:#a855f7;
+}
+
+.card-2:hover{
+  box-shadow:0 25px 60px rgba(168,85,247,.35);
+}
+
+
+/* =========================================
+   CARD 3 - GREEN
+========================================= */
+
+.card-3{
+  background:linear-gradient(135deg,#052e16,#047857,#10b981);
+}
+
+.card-3 .service-icon{
+  background:#059669;
+  color:#fff;
+}
+
+.card-3 .service-tag{
+  background:rgba(16,185,129,.15);
+  color:#86efac;
+  border:1px solid rgba(134,239,172,.3);
+}
+
+.card-3 .card-glow{
+  background:#10b981;
+}
+
+.card-3:hover{
+  box-shadow:0 25px 60px rgba(16,185,129,.35);
+}
+
+
+/* =========================================
+   CARD 4 - ORANGE
+========================================= */
+
+.card-4{
+  background:linear-gradient(135deg,#431407,#c2410c,#fb923c);
+}
+
+.card-4 .service-icon{
+  background:#ea580c;
+  color:#fff;
+}
+
+.card-4 .service-tag{
+  background:rgba(249,115,22,.15);
+  color:#fdba74;
+  border:1px solid rgba(253,186,116,.3);
+}
+
+.card-4 .card-glow{
+  background:#fb923c;
+}
+
+.card-4:hover{
+  box-shadow:0 25px 60px rgba(249,115,22,.35);
+}
+
+
+/* =========================================
+   CARD 5 - PINK
+========================================= */
+
+.card-5{
+  background:linear-gradient(135deg,#500724,#be185d,#ec4899);
+}
+
+.card-5 .service-icon{
+  background:#db2777;
+  color:#fff;
+}
+
+.card-5 .service-tag{
+  background:rgba(236,72,153,.15);
+  color:#f9a8d4;
+  border:1px solid rgba(249,168,212,.3);
+}
+
+.card-5 .card-glow{
+  background:#ec4899;
+}
+
+.card-5:hover{
+  box-shadow:0 25px 60px rgba(236,72,153,.35);
+}
+
+
+/* =========================================
+   CARD 6 - CYAN
+========================================= */
+
+.card-6{
+  background:linear-gradient(135deg,#083344,#0891b2,#22d3ee);
+}
+
+.card-6 .service-icon{
+  background:#0891b2;
+  color:#fff;
+}
+
+.card-6 .service-tag{
+  background:rgba(34,211,238,.15);
+  color:#a5f3fc;
+  border:1px solid rgba(165,243,252,.3);
+}
+
+.card-6 .card-glow{
+  background:#22d3ee;
+}
+
+.card-6:hover{
+  box-shadow:0 25px 60px rgba(34,211,238,.35);
+}
+
+
+/* =========================================
+   CARD 7 - RED
+========================================= */
+
+.card-7{
+  background:linear-gradient(135deg,#450a0a,#b91c1c,#ef4444);
+}
+
+.card-7 .service-icon{
+  background:#dc2626;
+  color:#fff;
+}
+
+.card-7 .service-tag{
+  background:rgba(239,68,68,.15);
+  color:#fca5a5;
+  border:1px solid rgba(252,165,165,.3);
+}
+
+.card-7 .card-glow{
+  background:#ef4444;
+}
+
+.card-7:hover{
+  box-shadow:0 25px 60px rgba(239,68,68,.35);
+}
+
+
+/* =========================================
+   CARD 8 - GOLD
+========================================= */
+
+.card-8{
+  background:linear-gradient(135deg,#3f2a00,#ca8a04,#facc15);
+}
+
+.card-8 .service-icon{
+  background:#ca8a04;
+  color:#fff;
+}
+
+.card-8 .service-tag{
+  background:rgba(250,204,21,.18);
+  color:#fef08a;
+  border:1px solid rgba(254,240,138,.35);
+}
+
+.card-8 .card-glow{
+  background:#facc15;
+}
+
+.card-8:hover{
+  box-shadow:0 25px 60px rgba(250,204,21,.35);
+}
+
+
+/* =========================================
+   CARD 9 - INDIGO
+========================================= */
+
+.card-9{
+  background:linear-gradient(135deg,#1e1b4b,#4338ca,#818cf8);
+}
+
+.card-9 .service-icon{
+  background:#4338ca;
+  color:#fff;
+}
+
+.card-9 .service-tag{
+  background:rgba(129,140,248,.15);
+  color:#c7d2fe;
+  border:1px solid rgba(199,210,254,.3);
+}
+
+.card-9 .card-glow{
+  background:#818cf8;
+}
+
+.card-9:hover{
+  box-shadow:0 25px 60px rgba(129,140,248,.35);
+}
 /* =========================================
    MOBILE (≤768px)
 ========================================= */
 
-@media (max-width: 768px) {
-  #services {
-    padding: 40px 16px 40px;
-    background: #ffffff;
-  }
+@media (max-width:768px){
 
-  .services-header {
-    margin-bottom: 40px;
-    position: relative;
-    z-index: 1000;
-  }
+#services{
 
-  .services-grid {
-    display: block;
-    max-width: 100%;
-    position: relative;
-  }
+    padding:50px 18px;
 
-  /* Sticky stacking cards */
-  .service-card-wrapper {
-    position: sticky;
-    top: 90px;
-    margin-bottom: 24px;
-  }
-
-  .service-card-wrapper:nth-child(1) {
-    z-index: 1;
-  }
-
-  .service-card-wrapper:nth-child(2) {
-    z-index: 2;
-  }
-
-  .service-card-wrapper:nth-child(3) {
-    z-index: 3;
-  }
-
-  .service-card-wrapper:nth-child(4) {
-    z-index: 4;
-  }
-
-  .service-card-wrapper:nth-child(5) {
-    z-index: 5;
-  }
-
-  .service-card-wrapper:nth-child(6) {
-    z-index: 6;
-  }
-
-  .service-card-wrapper:nth-child(7) {
-    z-index: 7;
-  }
-
-  .service-card-wrapper:nth-child(8) {
-    z-index: 8;
-  }
-
-  .service-card-wrapper:nth-child(9) {
-    z-index: 9;
-  }
-
-  .service-card-wrapper:last-child {
-    position: relative;
-    top: auto;
-    margin-bottom: 0;
-  }
-
-  .service-card {
-    border-radius: 24px;
-    padding: 32px 24px;
-    min-height: 320px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    box-shadow:
-      0 -12px 35px rgba(0, 0, 0, 0.35),
-      0 10px 30px rgba(0, 0, 0, 0.25);
-  }
-
-  .service-icon {
-    width: 64px;
-    height: 64px;
-    border-radius: 18px;
-  }
-
-  .service-card h3 {
-    font-size: 20px;
-  }
-
-  .service-card p {
-    font-size: 14px;
-    line-height: 1.6;
-    max-width: 280px;
-  }
-
-  .service-tag {
-    margin-top: 16px;
-    padding: 10px 20px;
-    font-size: 12px;
-  }
-
-  html[data-theme="light"] .service-card {
-    box-shadow:
-      0 -12px 35px rgba(37, 99, 235, 0.12),
-      0 10px 30px rgba(15, 23, 42, 0.08);
-  }
 }
+
+.services-header{
+
+    margin-bottom:40px;
+
+}
+
+.services-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    gap:22px;
+
+}
+
+.service-card{
+
+    min-height:auto;
+
+    padding:30px 24px;
+
+    border-radius:24px;
+
+    text-align:center;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.service-icon{
+
+    width:68px;
+    height:68px;
+
+    font-size:28px;
+
+    border-radius:18px;
+
+    margin-bottom:22px;
+
+}
+
+.service-card h3{
+
+    font-size:22px;
+
+    margin-bottom:12px;
+
+}
+
+.service-card p{
+
+    max-width:300px;
+
+    font-size:15px;
+
+    line-height:1.7;
+
+    margin-bottom:22px;
+
+}
+
+.service-tag{
+
+    padding:10px 18px;
+
+    font-size:12px;
+
+}
+
+.card-glow{
+
+    width:180px;
+    height:180px;
+
+    top:-70px;
+    right:-70px;
+
+    opacity:.15;
+
+}
+
+.service-card:hover{
+
+    transform:none;
+
+}
+
+}
+
+/* =========================================
+   SMALL MOBILE (≤480px)
+========================================= */
+
+@media (max-width:480px){
+
+#services{
+
+    padding:40px 14px;
+
+}
+
+.services-header{
+
+    margin-bottom:30px;
+
+}
+
+.service-card{
+
+    padding:26px 20px;
+
+    border-radius:20px;
+
+}
+
+.service-icon{
+
+    width:60px;
+    height:60px;
+
+    font-size:24px;
+
+    border-radius:16px;
+
+}
+
+.service-card h3{
+
+    font-size:20px;
+
+}
+
+.service-card p{
+
+    font-size:14px;
+
+    line-height:1.6;
+
+}
+
+.service-tag{
+
+    padding:9px 16px;
+
+    font-size:11px;
+
+}
+
+}
+/* =========================================
+   FINAL POLISH
+========================================= */
+
+.service-card,
+.service-icon,
+.service-tag,
+.card-glow,
+.card-shine{
+    transition:all .35s ease;
+}
+
+/* =========================================
+   HOVER EFFECTS
+========================================= */
+
+@media (hover:hover){
+
+.service-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.service-card:hover .service-icon{
+
+    transform:translateY(-6px) scale(1.08);
+
+}
+
+.service-card:hover .service-tag{
+
+    transform:scale(1.05);
+
+}
+
+.service-card:hover .card-glow{
+
+    opacity:.28;
+
+    transform:scale(1.15);
+
+}
+
+.service-card:hover .card-shine{
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(255,255,255,.22),
+        transparent 30%,
+        transparent 70%,
+        rgba(255,255,255,.08)
+    );
+
+}
+
+}
+
+/* =========================================
+   ICON SVG
+========================================= */
+
+.service-icon svg{
+
+    width:30px;
+    height:30px;
+
+}
+
+/* =========================================
+   LIGHT MODE
+========================================= */
+
+html[data-theme="light"] .service-card{
+
+    border:1px solid rgba(15,23,42,.08);
+
+    box-shadow:
+        0 10px 30px rgba(15,23,42,.06),
+        0 20px 60px rgba(15,23,42,.08);
+
+}
+
+html[data-theme="light"] .service-card h3{
+
+    color:#0f172a;
+
+}
+
+html[data-theme="light"] .service-card p{
+
+    color:#475569;
+
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+.service-card:focus-within{
+
+    outline:2px solid #3b82f6;
+
+    outline-offset:4px;
+
+}
+
+/* =========================================
+   PERFORMANCE
+========================================= */
+
+.service-card{
+
+    will-change:transform;
+
+    backface-visibility:hidden;
+
+    transform:translateZ(0);
+
+}
+
+.card-glow{
+
+    pointer-events:none;
+
+}
+
+.card-shine{
+
+    pointer-events:none;
+
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion:reduce){
+
+*{
+
+    animation:none !important;
+
+    transition:none !important;
+
+    scroll-behavior:auto !important;
+
+}
+
+}
+
+/* =========================================
+   END
+========================================= */
