@@ -12,7 +12,9 @@ const menuItems = [
   { name: "About", id: "about" },
   { name: "Services", id: "services" },
   { name: "Projects", id: "projects" },
-  { name: "Contact", id: "contact" },
+  { name: "Team", id: "team" },
+  { name: "Contact", id: "contact" }
+  
 ];
 
 const whatsappLink =
@@ -132,7 +134,7 @@ const Navbar = () => {
             className="mobile-btn"
             onClick={() => window.open(whatsappLink, "_blank")}
           >
-            Get in Touch
+            Get in Touch    
           </button>
         </div>
       </div>

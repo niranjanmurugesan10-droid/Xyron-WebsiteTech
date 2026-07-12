@@ -6,6 +6,7 @@ import Services from './Components/Services/Services'
 import Projects from './Components/Projects/Projects'
 import Contact from './Components/Contact/Contact'
 import Footer from './Components/Footer/Footer'
+
 // import Pricing from './Components/Pricing/Pricing'
 import WhatsAppFloat from './Components/WhatsAppFloat/WhatsAppFloat'
 import './styles/section-headers.css'
